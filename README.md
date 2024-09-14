@@ -1,4 +1,4 @@
-# THE GREEK PYRAMID [logo]: https::/github.com/ElCaballeroTrix/GreekPyramid/GreekPyramid.ico
+# THE GREEK PYRAMID
 ---
 My first videogame project and the reason I decided to make videogames.
 
