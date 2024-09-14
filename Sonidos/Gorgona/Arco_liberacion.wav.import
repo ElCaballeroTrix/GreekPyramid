@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Arco_liberacion.wav-54f9e81f214dd71a9f3592aef5e78fac.sample"
+
+[deps]
+
+source_file="res://Sonidos/Gorgona/Arco_liberacion.wav"
+dest_files=[ "res://.import/Arco_liberacion.wav-54f9e81f214dd71a9f3592aef5e78fac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

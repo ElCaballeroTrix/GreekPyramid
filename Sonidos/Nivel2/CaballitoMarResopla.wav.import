@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CaballitoMarResopla.wav-3269ca73f933d182c218aa4c64149c47.sample"
+
+[deps]
+
+source_file="res://Sonidos/Nivel2/CaballitoMarResopla.wav"
+dest_files=[ "res://.import/CaballitoMarResopla.wav-3269ca73f933d182c218aa4c64149c47.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

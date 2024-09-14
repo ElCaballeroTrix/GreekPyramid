@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tenebroso.wav-f5f8860a50d2a5c1d66407adc9566fb4.sample"
+
+[deps]
+
+source_file="res://Sonidos/Musica/Tenebroso.wav"
+dest_files=[ "res://.import/Tenebroso.wav-f5f8860a50d2a5c1d66407adc9566fb4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

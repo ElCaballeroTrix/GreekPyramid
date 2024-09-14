@@ -1,0 +1,1889 @@
+[gd_scene load_steps=88 format=2]
+
+[ext_resource path="res://Escenas/Nivel 1/Flechas_Gorgona.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tileset/Tileset.png" type="Texture" id=2]
+[ext_resource path="res://Jefes/Gorgona/sprite_4.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Jugador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Jefes/Gorgona/sprite_5.png" type="Texture" id=6]
+[ext_resource path="res://UI/Stats.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Jefes/Gorgona/FondoGorgona.png" type="Texture" id=8]
+[ext_resource path="res://Escenas/Spawn.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Jefes/Gorgona/sprite_1.png" type="Texture" id=10]
+[ext_resource path="res://Jefes/Gorgona/sprite_2.png" type="Texture" id=11]
+[ext_resource path="res://Jefes/Gorgona/sprite_0.png" type="Texture" id=12]
+[ext_resource path="res://Jefes/Gorgona/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Health_Boss.tscn" type="PackedScene" id=15]
+[ext_resource path="res://icon.png" type="Texture" id=16]
+[ext_resource path="res://Shaders/Niebla.shader" type="Shader" id=17]
+[ext_resource path="res://Escenas/Nivel 1/Pilar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Jefes/Gorgona/Gorgona.png" type="Texture" id=19]
+[ext_resource path="res://UI/Menus/PauseMenu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Escenas/Nivel 1/Main_Gorgona.gd" type="Script" id=21]
+[ext_resource path="res://Escenas/ScreenShake.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Tileset/Luz_Esfera.png" type="Texture" id=23]
+[ext_resource path="res://Escenas/Nivel 1/Nivel 1Stun_Ataque.tres" type="Animation" id=24]
+[ext_resource path="res://Jefes/Gorgona/arco.tres" type="Animation" id=25]
+[ext_resource path="res://Jefes/Gorgona/Idle.tres" type="Animation" id=26]
+[ext_resource path="res://Escenas/Nivel 1/Nivel 1Coletazo.tres" type="Animation" id=27]
+[ext_resource path="res://Shaders/Blink.shader" type="Shader" id=28]
+[ext_resource path="res://Jefes/Gorgona/Stun_Light4.png" type="Texture" id=29]
+[ext_resource path="res://Jefes/Gorgona/Stun_Light3.png" type="Texture" id=30]
+[ext_resource path="res://Jefes/Gorgona/Stun_Light1.png" type="Texture" id=31]
+[ext_resource path="res://Jefes/Gorgona/Stun_Light2.png" type="Texture" id=32]
+[ext_resource path="res://Jefes/Gorgona/Stun_Light0.png" type="Texture" id=33]
+[ext_resource path="res://Tileset/Antorcha.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Enemigos/Extrana/Extrana.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Jefes/Gorgona/CabezaGorgona.png" type="Texture" id=36]
+[ext_resource path="res://Sonidos/Dano/pop.wav" type="AudioStream" id=37]
+[ext_resource path="res://Sonidos/Espada/CorteEspadaConEco.wav" type="AudioStream" id=38]
+[ext_resource path="res://Jefes/Gorgona/CabezaGorgonaMenu.png.png" type="Texture" id=39]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 0, 64, 48, 0, 48, 64 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 288, 48, 48, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 1 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 272, 16, 64, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Tileset.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 48, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Tileset.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 32, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Tileset.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 64, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Tileset.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 48, 80, 48, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Tileset.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 80, 48, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Tileset.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 32, 48, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Tileset.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 48, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Tileset.png 9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 32, 32, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Tileset.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 16, 32, 16, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Tileset.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 16, 64, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Tileset.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 32, 64, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=10]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=11]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=12]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=13]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=14]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8.00003, 10 )
+
+[sub_resource type="OccluderPolygon2D" id=16]
+polygon = PoolVector2Array( 0, 1, 0, 0 )
+
+[sub_resource type="GDScript" id=17]
+script/source = "extends KinematicBody2D
+
+var velocidad=Vector2.ZERO
+var knockback=Vector2.ZERO
+onready var stats=$Stats
+export var accelaration=300
+export var max_speed=200
+export var friction=200
+onready var animacion=get_node(\"AnimationPlayer\")
+onready var Jugador=get_tree().get_root().get_node(\"Main_Gorgona/Jugador\")
+onready var JugadorHurtbox=get_tree().get_root().get_node(\"Main_Gorgona/Jugador/Hurtbox\")
+onready var Jugador_Direcc=get_tree().get_root().get_node(\"Main_Gorgona/Jugador/Sprite\")
+onready var Jugador_HitAbajo=get_tree().get_root().get_node(\"Main_Gorgona/Jugador/Hit_Abajo/CollisionShape2D\")
+var health=1
+var Jugador_Encima=false
+var Encima=false
+var dentroZonaStun=false
+enum{
+	IDLE,
+	ARCO,
+	STUN,
+	COLETAZO,
+	MOVIMIENTO
+}
+var direccion=-1
+var direccion2=Vector2(-1,0)
+var state=ARCO
+var state_previo=ARCO
+var state_siguiente=ARCO
+var timer=0
+var timer2=0
+var mirado=0
+var fuera_stun=false
+var en_movimiento=0
+var coletazo_accion=false
+var scale2=1 #Esto se hace, ya que al cambiar el scale.x de un Kinematic2D, move_and_slide, lo vuelve a poner a 1
+var zona_Inmune_En_Stun=false
+var golpeao_En_Stun=false
+var enEstadoArco=false
+signal fin_stun()
+signal dead()
+
+func _ready():
+	stats.connect(\"no_health\",self,\"dead\")
+	#animacion.play(\"Idle\")
+
+func _physics_process(delta):
+	match state:
+		ARCO:
+			arco()
+			mirado=0
+			fuera_stun=false
+		STUN:
+			if mirado==0:
+				stun()
+			elif mirado==1: colision_stun()
+		COLETAZO:
+			coletazo()
+		MOVIMIENTO:
+			movimiento(delta)
+			mirado=0
+			fuera_stun=false
+
+
+func arco():
+	if !enEstadoArco:
+		enEstadoArco=true
+		if coletazo_accion==false:
+			#yield(get_tree().create_timer(1),\"timeout\")
+			$TimerArco.start()
+		else:
+			coletazo_accion=false
+			animacion.play(\"arco\")
+
+func _on_TimerArco_timeout():
+	coletazo_accion=false
+	animacion.play(\"arco\")
+
+func flechas_atacan():
+	if $Spawn_Node!=null:
+		$Spawn_Node/Spawn/Timer.start()
+
+func arco_finished():
+	state_siguiente=state
+	state=STUN
+	enEstadoArco=false
+
+func stun():
+	animacion.play(\"Stun_postura\")
+func mirando_a_gorgona():
+	if mirado==0:
+		mirado=1
+		$Dano_Stun/Stun_Animacion.play(\"Stun_Ataque\")
+
+func colision_stun():
+	if !zona_Inmune_En_Stun:
+		if Jugador_Direcc.flip_h==false and scale2==1:
+			$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",false)
+			golpeao_En_Stun=true
+		elif Jugador_Direcc.flip_h==true and scale2==1:
+			$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+			golpeao_En_Stun=false
+		elif Jugador_Direcc.flip_h==true and scale2==(-1):
+			$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",false)
+			golpeao_En_Stun=true
+		elif Jugador_Direcc.flip_h==false and scale2==(-1):
+			$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+			golpeao_En_Stun=false
+
+func zona_Inmune_Stun():
+	zona_Inmune_En_Stun=true
+
+func visible_stun():
+	$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+	emit_signal(\"fin_stun\")
+	zona_Inmune_En_Stun=false
+	$Luz_Cabeza.energy=0
+	animacion.play(\"Idle\")
+	if golpeao_En_Stun and dentroZonaStun: 
+		JugadorHurtbox.start_invincibility(0.8)
+		golpeao_En_Stun=false
+		dentroZonaStun=false
+	state=state_siguiente
+
+func movimiento(delta):
+	if state_previo==ARCO: 
+		animacion.stop(false)
+	else:
+		animacion.stop()
+	#$Animacion_Coletazo.stop()
+	$Dano_Stun/Stun_Animacion.stop()
+	$Dano_Stun.visible=false
+	$Luz_Cabeza.visible=false
+	$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+	$Animacion_Coletazo.play(\"Correr\")
+	en_movimiento=1
+	coletazo_accion=true
+	velocidad.x=(max_speed*delta*direccion)/delta
+	velocidad.y=0
+	velocidad=move_and_slide(velocidad,Vector2(0,-1))
+
+func dead():
+	$TimerArco.stop()
+	$Timer_Movimiento.stop()
+	velocidad=Vector2.ZERO
+	enEstadoArco=true
+	en_movimiento=1
+	$Animacion_Coletazo.stop()
+	$Luz_Cabeza.energy=0
+	emit_signal(\"dead\")
+
+func _on_Cuerpo_area_entered(area):
+	stats.health-=area.damage
+	$Health_Boss/ProgressBar.set_bar_value($Health_Boss/ProgressBar.value-1)
+	$Cuerpo.start_invincibility(0.4)
+	#Si le das con la espada en el aire encima de la Gorgona, se movera
+	if Jugador_Encima==true && en_movimiento==0 && !Jugador_HitAbajo.disabled:
+		empezar_movimiento_por_jugador_estar_arriba()
+
+
+func _on_Cuerpo_body_entered(_body):
+	if en_movimiento==0:
+		coletazo_accion=true
+		if state==COLETAZO:
+			state_previo=ARCO
+		else: 
+			state_previo=state
+		state=COLETAZO
+
+func empuje():
+	Jugador.emit_signal(\"luchando_con_boss\",170,20,direccion)
+func coletazo():
+	if state_previo==ARCO: 
+		animacion.stop(false)
+	else: 
+		animacion.stop()
+		$Dano_Stun/Stun_Animacion.stop()
+		#yield(get_node(\"Dano_Stun/Stun_Animacion\"),\"animation_finished\")
+	$Dano_Stun/Stun_Animacion.stop()
+	$Dano_Stun.visible=false
+	$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+	$Luz_Cabeza.visible=false
+	$Timer_quitar_empuje.start()
+	state_siguiente=ARCO
+	$Animacion_Coletazo.play(\"Nivel 1Coletazo\")
+
+func state_anterior():
+	enEstadoArco=false
+	state=state_previo
+	$Dano_Stun.visible=true
+	$Luz_Cabeza.visible=true
+
+func _on_Timer_quitar_empuje_timeout():
+	Jugador.emit_signal(\"fin_de_empuje_boss\")
+
+func _on_Cuerpo_invincibility_started():
+	$BlinkAnimationPlayer.play(\"Start\")
+
+func _on_Cuerpo_invincibility_ended():
+	$BlinkAnimationPlayer.play(\"Stop\")
+
+func fin_movimiento():
+	$Animacion_Coletazo.stop()
+	velocidad=Vector2.ZERO
+	if scale.x==-1:
+		scale.x=1
+	elif scale.x==1:
+		scale.x=-1
+	#scale.x=scale.x*(-1)
+	direccion=direccion*(-1)
+	direccion2=Vector2(direccion,0)
+	en_movimiento=0
+	$Cuerpo/CollisionShape2D.scale.x=1
+	$Cuerpo_Dano/CollisionShape2D.scale.x=1
+	$Cuerpo/CollisionShape2D.position.x=16
+	$Cuerpo_Dano/CollisionShape2D.position.x=16
+	$Timer_Movimiento.start(20)
+	Encima=false
+	Jugador_Encima=false
+	if state_previo==STUN || state_previo==COLETAZO:
+		state_previo=ARCO
+	state_siguiente=ARCO
+	state_anterior()
+
+func _on_Timer_Movimiento_timeout():
+	$Timer_Movimiento.stop()
+	if en_movimiento==0:
+		if !Encima:
+			yield(get_tree().create_timer(2),\"timeout\")
+		else: yield(get_tree().create_timer(1),\"timeout\")
+		en_movimiento=1
+		$Cuerpo/CollisionShape2D.scale.x=0.4
+		$Cuerpo_Dano/CollisionShape2D.scale.x=0.4
+		$Cuerpo/CollisionShape2D.position.x=5
+		$Cuerpo_Dano/CollisionShape2D.position.x=5
+		state_previo=state
+		if state_previo==STUN:
+			#state_siguiente=MOVIMIENTO
+			#yield(get_node(\"Dano_Stun/Stun_Animacion\"),\"animation_finished\")
+			$Dano_Stun/Stun_Animacion.seek(0,true)
+			$Dano_Stun/CollisionShape2D.set_deferred(\"disabled\",true)
+			$Dano_Stun/Stun_Animacion.stop()
+			zona_Inmune_En_Stun=false
+			$Luz_Cabeza.energy=0
+			emit_signal(\"fin_stun\")
+		scale2*=-1
+		state=MOVIMIENTO
+	else: $Timer_Movimiento.start(5)
+
+func empezar_movimiento_por_jugador_estar_arriba():
+	if Encima==false:
+		$Timer_Movimiento.stop()
+		$Timer_Movimiento.start(0.1)
+		Encima=true
+
+func _on_Arriba_body_entered(body):
+	if body.name==\"Jugador\":
+		Jugador_Encima=true
+
+
+func _on_Arriba_body_exited(body):
+	if body.name==\"Jugador\":
+		Jugador_Encima=false
+"
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( -355, 15, -350, -100, 0, -12, 0, -1 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 96, 48 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 19 )
+region = Rect2( 576, 0, 96, 48 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 19 )
+region = Rect2( 672, 0, 96, 48 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "sin",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": false,
+"name": "Coletazo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "petrificacion2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "petrificacion",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "arco",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=24]
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Gorgona:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 8, 9 ]
+}
+
+[sub_resource type="Animation" id=25]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Gorgona:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "mirando_a_gorgona"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Luz_Cabeza:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 1.0, 1.5 ]
+}
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 7.033, 32.094, 19.071, -30.832, -15.376, -30.297, -7.978, 16.683, -25.341, 8.463, -36.779, 35.715 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 7.033, 32.094, 19.071, -28.438, -13.323, -26.607, -7.978, 16.683, -25.341, 8.463, -36.779, 35.715 )
+
+[sub_resource type="CapsuleShape2D" id=28]
+radius = 5.689
+height = 55.237
+
+[sub_resource type="ShaderMaterial" id=29]
+resource_local_to_scene = true
+shader = ExtResource( 28 )
+shader_param/active = false
+
+[sub_resource type="Animation" id=30]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Gorgona:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Gorgona:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 50, 70.58 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 5.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 8, 8.854 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 8, 10 )
+
+[sub_resource type="OccluderPolygon2D" id=36]
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=39]
+polygon = PoolVector2Array( 0, 0, 16, 16, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
+points = PoolVector2Array( 16, 16, 0, 0, 16, 0 )
+
+[sub_resource type="OccluderPolygon2D" id=41]
+polygon = PoolVector2Array( 0, 16, 16, 0, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 0, 16, 0, 0, 16 )
+
+[sub_resource type="TileSet" id=43]
+1/name = "Tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 96, 16, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/occluder = SubResource( 36 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 37 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Tileset.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 80, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 38 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Tileset.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 192, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Tileset.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 288, 48, 48, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Tileset.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 64, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/occluder = SubResource( 39 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 40 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 40 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "Tileset.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 80, 16, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/occluder = SubResource( 41 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 42 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=44]
+shader = ExtResource( 17 )
+shader_param/color = Vector3( 0.4375, 0.28125, 0.234375 )
+shader_param/OCTAVES = 4
+
+[sub_resource type="Animation" id=45]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rejas/Sprite2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -14.853 ), Vector2( 0, -7.861 ), Vector2( 0, -1.196 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jugador:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6.548, 540 ), Vector2( 100, 540.861 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.241, 0.195 ), Vector2( 1.489, 1.216 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 40, 539 ), Vector2( 265, 479 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Jugador/AnimationPlayer:current_animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ "Correr", "Idle" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Jugador/CanvasLayer/HealthUI:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CabezaGorgona:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Extrana:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -192, 544 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Gorgona/Health_Boss/ProgressBar:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Fin/ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=46]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fin/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jugador:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 288, 540 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Gorgona/Health_Boss/ProgressBar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("Jugador/AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 38 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Jugador/MobileControls/MobileButtons:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Gorgona/Sprite_Gorgona:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=47]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Extrana:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -32, 544 ), Vector2( 240, 544 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jugador/Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CabezaGorgona:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CabezaGorgona:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 457, 530 ), Vector2( 457, 549 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CabezaGorgona:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CabezaGorgona:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Extrana/CanvasLayer/Dialogo")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "dialogStart"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Rejas2/SpriteRajas2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -7.661 ), Vector2( 0, -15.505 ) ]
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("Para animacion")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 37 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Rejas2/StaticBodyRejas2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -7.661 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Rejas/Sprite2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -14.853 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=48]
+
+[node name="Main_Gorgona" type="Node2D" groups=[
+"Main_Gorgona",
+]]
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.505882, 0.0941176, 0.0941176, 1 )
+position = Vector2( 260, 500 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="TileMap_Atras" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1572867, 3, 0, 1572868, 10, 0, 1572869, 9, 0, 1572870, 3, 0, 1572871, 10, 0, 1572872, 9, 0, 1572873, 5, 0, 1572876, 3, 0, 1572877, 10, 0, 1572878, 9, 0, 1572879, 5, 0, 1572882, 3, 0, 1572883, 10, 0, 1572884, 9, 0, 1572885, 5, 0, 1572888, 3, 0, 1572889, 10, 0, 1572890, 9, 0, 1572891, 3, 0, 1572892, 10, 0, 1572893, 9, 0, 1638404, 2, 0, 1638407, 2, 0, 1638413, 2, 0, 1638419, 2, 0, 1638425, 2, 0, 1638428, 2, 0, 1703940, 2, 0, 1703943, 2, 0, 1703949, 2, 0, 1703952, 8, 0, 1703955, 2, 0, 1703961, 7, 0, 1703964, 2, 0, 1769476, 2, 0, 1769479, 2, 0, 1769482, 8, 0, 1769485, 2, 0, 1769488, 2, 0, 1769491, 2, 0, 1769500, 2, 0, 1835012, 2, 0, 1835015, 7, 0, 1835018, 2, 0, 1835021, 2, 0, 1835024, 2, 0, 1835027, 7, 0, 1835036, 2, 0, 1900548, 2, 0, 1900554, 2, 0, 1900557, 2, 0, 1900560, 2, 0, 1900566, 8, 0, 1900569, 8, 0, 1900572, 2, 0, 1966084, 2, 0, 1966090, 2, 0, 1966093, 7, 0, 1966096, 2, 0, 1966099, 8, 0, 1966102, 2, 0, 1966105, 2, 0, 1966108, 2, 0, 2031620, 2, 0, 2031626, 2, 0, 2031632, 2, 0, 2031635, 2, 0, 2031638, 2, 0, 2031641, 2, 0, 2031644, 2, 0, 2031645, 0, 0, 2097156, 2, 0, 2097162, 2, 0, 2097168, 2, 0, 2097171, 2, 0, 2097174, 2, 0, 2097177, 2, 0, 2097180, 2, 0, 2162689, 1, 0, 2162692, 2, 0, 2162698, 2, 0, 2162704, 2, 0, 2162707, 2, 0, 2162710, 2, 0, 2162713, 2, 0, 2162716, 2, 0, 2228227, 4, 0, 2228228, 11, 0, 2228229, 12, 0, 2228230, 6, 0, 2228233, 4, 0, 2228234, 11, 0, 2228235, 12, 0, 2228236, 6, 0, 2228239, 4, 0, 2228240, 11, 0, 2228241, 12, 0, 2228242, 4, 0, 2228243, 11, 0, 2228244, 12, 0, 2228245, 4, 0, 2228246, 11, 0, 2228247, 12, 0, 2228248, 4, 0, 2228249, 11, 0, 2228250, 12, 0, 2228251, 4, 0, 2228252, 11, 0, 2228253, 12, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Antorchas" type="YSort" parent="."]
+
+[node name="Antorcha" parent="Antorchas" instance=ExtResource( 34 )]
+position = Vector2( 264, 488 )
+
+[node name="Sprite" parent="Antorchas/Antorcha" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Antorcha2" parent="Antorchas" instance=ExtResource( 34 )]
+position = Vector2( 168, 488 )
+
+[node name="Sprite" parent="Antorchas/Antorcha2" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Antorcha3" parent="Antorchas" instance=ExtResource( 34 )]
+position = Vector2( 72, 488 )
+
+[node name="Sprite" parent="Antorchas/Antorcha3" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Antorcha4" parent="Antorchas" instance=ExtResource( 34 )]
+position = Vector2( 360, 488 )
+
+[node name="Sprite" parent="Antorchas/Antorcha4" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Antorcha5" parent="Antorchas" instance=ExtResource( 34 )]
+position = Vector2( 456, 488 )
+
+[node name="Sprite" parent="Antorchas/Antorcha5" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Estalagtitas" type="YSort" parent="."]
+position = Vector2( 230, 496 )
+scale = Vector2( 10, 10 )
+
+[node name="Spawn" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -15.808, -10.391 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sprite = "Estalagtita"
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn/Spawn" index="0"]
+wait_time = 7.0
+
+[node name="Sprite" parent="Estalagtitas/Spawn" index="2"]
+material = SubResource( 3 )
+
+[node name="Spawn2" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -14.194, -10.393 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn2" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn2/Spawn" index="0"]
+wait_time = 7.2
+
+[node name="Sprite" parent="Estalagtitas/Spawn2" index="2"]
+material = SubResource( 4 )
+
+[node name="Spawn3" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -12.603, -10.389 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn3" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn3/Spawn" index="0"]
+wait_time = 7.4
+
+[node name="Sprite" parent="Estalagtitas/Spawn3" index="2"]
+material = SubResource( 5 )
+
+[node name="Spawn4" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -10.995, -10.393 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn4" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn4/Spawn" index="0"]
+wait_time = 7.6
+
+[node name="Sprite" parent="Estalagtitas/Spawn4" index="2"]
+material = SubResource( 6 )
+
+[node name="Spawn5" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -9.388, -10.386 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn5" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn5/Spawn" index="0"]
+wait_time = 7.8
+
+[node name="Sprite" parent="Estalagtitas/Spawn5" index="2"]
+material = SubResource( 7 )
+
+[node name="Spawn6" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( -7.803, -10.387 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn6" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn6/Spawn" index="0"]
+wait_time = 8.0
+
+[node name="Sprite" parent="Estalagtitas/Spawn6" index="2"]
+material = SubResource( 8 )
+
+[node name="Spawn7" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 14.4922, -10.391 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn7" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sprite = "Estalagtita"
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn7/Spawn" index="0"]
+wait_time = 7.0
+
+[node name="Sprite" parent="Estalagtitas/Spawn7" index="2"]
+material = SubResource( 9 )
+
+[node name="Spawn8" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 16.1062, -10.393 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn8" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn8/Spawn" index="0"]
+wait_time = 7.2
+
+[node name="Sprite" parent="Estalagtitas/Spawn8" index="2"]
+material = SubResource( 10 )
+
+[node name="Spawn9" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 17.6972, -10.389 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn9" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn9/Spawn" index="0"]
+wait_time = 7.4
+
+[node name="Sprite" parent="Estalagtitas/Spawn9" index="2"]
+material = SubResource( 11 )
+
+[node name="Spawn10" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 19.3052, -10.393 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn10" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn10/Spawn" index="0"]
+wait_time = 7.6
+
+[node name="Sprite" parent="Estalagtitas/Spawn10" index="2"]
+material = SubResource( 12 )
+
+[node name="Spawn11" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 20.9122, -10.386 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn11" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn11/Spawn" index="0"]
+wait_time = 7.8
+
+[node name="Sprite" parent="Estalagtitas/Spawn11" index="2"]
+material = SubResource( 13 )
+
+[node name="Spawn12" parent="Estalagtitas" instance=ExtResource( 9 )]
+position = Vector2( 22.4972, -10.387 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Spawn" parent="Estalagtitas/Spawn12" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 18 )
+direccion = Vector2( 0, 1 )
+sonido = "res://Sonidos/Gorgona/Estalagtitas.wav"
+speed = 2
+
+[node name="Timer" parent="Estalagtitas/Spawn12/Spawn" index="0"]
+wait_time = 8.0
+
+[node name="Sprite" parent="Estalagtitas/Spawn12" index="2"]
+material = SubResource( 14 )
+
+[node name="TimerIzq" type="Timer" parent="Estalagtitas"]
+wait_time = 8.0
+
+[node name="TimerDer" type="Timer" parent="Estalagtitas"]
+wait_time = 8.0
+
+[node name="Limite_Correr" type="Area2D" parent="."]
+visible = false
+position = Vector2( 50, 536 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limite_Correr"]
+scale = Vector2( 0.249, 5.206 )
+shape = SubResource( 15 )
+disabled = true
+
+[node name="Jugador" parent="." instance=ExtResource( 4 )]
+position = Vector2( -6.548, 540 )
+
+[node name="Camera2D" parent="Jugador" index="10"]
+current = false
+
+[node name="LightOccluder2D" parent="Jugador" index="21"]
+light_mask = 0
+occluder = SubResource( 16 )
+light_mask = 0
+
+[node name="Gorgona" type="KinematicBody2D" parent="."]
+position = Vector2( 462, 536 )
+collision_layer = 2147483664
+script = SubResource( 17 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Luz_Cabeza" type="Light2D" parent="Gorgona"]
+position = Vector2( -11.028, -10.029 )
+scale = Vector2( 0.061, -0.052 )
+texture = ExtResource( 23 )
+color = Color( 0.956863, 0.768627, 0.329412, 1 )
+energy = 0.5
+
+[node name="Sprite_Gorgona" type="Sprite" parent="Gorgona"]
+material = SubResource( 18 )
+texture = ExtResource( 19 )
+hframes = 11
+
+[node name="Dano_Stun" parent="Gorgona" instance=ExtResource( 14 )]
+position = Vector2( 2, 0 )
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Gorgona/Dano_Stun" index="0"]
+position = Vector2( -22.484, -6.133 )
+rotation = -0.162316
+shape = SubResource( 19 )
+disabled = true
+
+[node name="Stun_Animacion" type="AnimationPlayer" parent="Gorgona/Dano_Stun"]
+anims/Stun_Ataque = ExtResource( 24 )
+
+[node name="Inicio_Rayo" type="Light2D" parent="Gorgona/Dano_Stun"]
+position = Vector2( -200, -6.419 )
+rotation = -0.0383972
+enabled = false
+texture = ExtResource( 33 )
+shadow_enabled = true
+
+[node name="Medio_Rayo" type="Light2D" parent="Gorgona/Dano_Stun"]
+position = Vector2( -200, -6.419 )
+rotation = -0.0383972
+enabled = false
+texture = ExtResource( 31 )
+shadow_enabled = true
+
+[node name="Rayo" type="Light2D" parent="Gorgona/Dano_Stun"]
+position = Vector2( -200, -6.419 )
+rotation = -0.0383972
+enabled = false
+texture = ExtResource( 32 )
+shadow_enabled = true
+
+[node name="Desaparece_Rayo" type="Light2D" parent="Gorgona/Dano_Stun"]
+position = Vector2( -200, -6.419 )
+rotation = -0.0383972
+enabled = false
+texture = ExtResource( 30 )
+shadow_enabled = true
+
+[node name="Adios_Rayo" type="Light2D" parent="Gorgona/Dano_Stun"]
+position = Vector2( -200, -6.419 )
+rotation = -0.0383972
+enabled = false
+texture = ExtResource( 29 )
+shadow_enabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Gorgona"]
+visible = false
+frames = SubResource( 23 )
+animation = "Coletazo"
+frame = 2
+playing = true
+
+[node name="Animacion_Coletazo" type="AnimationPlayer" parent="Gorgona"]
+anims/Correr = SubResource( 24 )
+"anims/Nivel 1Coletazo" = ExtResource( 27 )
+
+[node name="Timer_quitar_empuje" type="Timer" parent="Gorgona"]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gorgona"]
+anims/Idle = ExtResource( 26 )
+anims/Stun_postura = SubResource( 25 )
+anims/arco = ExtResource( 25 )
+
+[node name="Cuerpo_Dano" parent="Gorgona" instance=ExtResource( 14 )]
+visible = false
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Gorgona/Cuerpo_Dano" index="0"]
+position = Vector2( 16, 16 )
+rotation = 1.5708
+shape = SubResource( 26 )
+
+[node name="Cuerpo" parent="Gorgona" instance=ExtResource( 5 )]
+collision_layer = 2147483656
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Gorgona/Cuerpo" index="0"]
+position = Vector2( 16, 16 )
+rotation = 1.5708
+scale = Vector2( 1.2, 1.2 )
+shape = SubResource( 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gorgona"]
+visible = false
+position = Vector2( 16, 8 )
+rotation = 1.5708
+scale = Vector2( 1, 0.996 )
+shape = SubResource( 28 )
+
+[node name="Stats" parent="Gorgona" instance=ExtResource( 7 )]
+max_health = 15
+
+[node name="Health_Boss" parent="Gorgona" instance=ExtResource( 15 )]
+
+[node name="ProgressBar" parent="Gorgona/Health_Boss" index="0"]
+visible = false
+margin_left = 20.0
+margin_top = 180.0
+margin_right = 320.0
+margin_bottom = 188.0
+max_value = 15.0
+value = 15.0
+
+[node name="ProgressBar2" parent="Gorgona/Health_Boss/ProgressBar" index="0"]
+margin_right = 300.0
+max_value = 15.0
+value = 15.0
+
+[node name="BloodVeins" parent="Gorgona/Health_Boss/ProgressBar" index="2"]
+margin_right = 284.0
+
+[node name="BossSprite" parent="Gorgona/Health_Boss/ProgressBar" index="3"]
+texture = ExtResource( 39 )
+
+[node name="Spawn_Node" parent="Gorgona" instance=ExtResource( 9 )]
+position = Vector2( -32, 0 )
+
+[node name="Spawn" parent="Gorgona/Spawn_Node" index="0"]
+position = Vector2( 0, 0 )
+npc = ExtResource( 1 )
+direccion = Vector2( -1, 0 )
+sprite = "Flecha(Gorgona)"
+speed = 3
+
+[node name="Timer" parent="Gorgona/Spawn_Node/Spawn" index="0"]
+wait_time = 0.001
+one_shot = true
+autostart = false
+
+[node name="Sprite" parent="Gorgona/Spawn_Node" index="2"]
+material = SubResource( 29 )
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="Gorgona"]
+anims/Start = SubResource( 30 )
+anims/Stop = SubResource( 31 )
+
+[node name="Timer_Movimiento" type="Timer" parent="Gorgona"]
+wait_time = 20.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Gorgona"]
+
+[node name="Arriba" type="Area2D" parent="Gorgona"]
+position = Vector2( 0, -94.448 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gorgona/Arriba"]
+shape = SubResource( 32 )
+
+[node name="TimerArco" type="Timer" parent="Gorgona"]
+one_shot = true
+
+[node name="Rejas" type="Area2D" parent="."]
+position = Vector2( 4, 544 )
+scale = Vector2( 1.5, 2.5 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas"]
+position = Vector2( 2.454, 0 )
+shape = SubResource( 33 )
+
+[node name="Sprite2" type="Sprite" parent="Rejas"]
+position = Vector2( 0, -14.853 )
+texture = ExtResource( 2 )
+vframes = 67
+hframes = 120
+frame = 610
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rejas"]
+position = Vector2( 0, 2.454 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas/StaticBody2D"]
+shape = SubResource( 34 )
+
+[node name="Rejas2" type="Area2D" parent="."]
+position = Vector2( 527, 544 )
+scale = Vector2( 1.5, 2.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas2"]
+position = Vector2( -3.641, 0 )
+shape = SubResource( 33 )
+
+[node name="SpriteRajas2" type="Sprite" parent="Rejas2"]
+texture = ExtResource( 2 )
+vframes = 67
+hframes = 120
+frame = 610
+
+[node name="StaticBodyRejas2" type="StaticBody2D" parent="Rejas2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas2/StaticBodyRejas2"]
+shape = SubResource( 35 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 43 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0, 1376259, 2, 0, 1376260, 2, 0, 1376261, 2, 0, 1376262, 2, 0, 1376263, 2, 0, 1376264, 2, 0, 1376265, 2, 0, 1376266, 2, 0, 1376267, 2, 0, 1376268, 2, 0, 1376269, 2, 0, 1376270, 2, 0, 1376271, 2, 0, 1376272, 2, 0, 1376273, 2, 0, 1376274, 2, 0, 1376275, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0, 1376283, 2, 0, 1376284, 2, 0, 1376285, 2, 0, 1376286, 2, 0, 1376287, 2, 0, 1376288, 2, 0, 1376289, 2, 0, 1441792, 2, 0, 1441793, 2, 0, 1441794, 2, 0, 1441795, 2, 0, 1441796, 2, 0, 1441797, 2, 0, 1441798, 2, 0, 1441799, 2, 0, 1441800, 2, 0, 1441801, 2, 0, 1441802, 2, 0, 1441803, 2, 0, 1441804, 2, 0, 1441805, 2, 0, 1441806, 2, 0, 1441807, 2, 0, 1441808, 2, 0, 1441809, 2, 0, 1441810, 2, 0, 1441811, 2, 0, 1441812, 2, 0, 1441813, 2, 0, 1441814, 2, 0, 1441815, 2, 0, 1441816, 2, 0, 1441817, 2, 0, 1441818, 2, 0, 1441819, 2, 0, 1441820, 2, 0, 1441821, 2, 0, 1441822, 2, 0, 1441823, 2, 0, 1441824, 2, 0, 1441825, 2, 0, 1507328, 2, 0, 1507329, 2, 0, 1507330, 2, 0, 1507331, 2, 0, 1507332, 2, 0, 1507333, 2, 0, 1507334, 2, 0, 1507335, 2, 0, 1507336, 2, 0, 1507337, 2, 0, 1507338, 2, 0, 1507339, 2, 0, 1507340, 2, 0, 1507341, 2, 0, 1507342, 2, 0, 1507343, 2, 0, 1507344, 2, 0, 1507345, 2, 0, 1507346, 2, 0, 1507347, 2, 0, 1507348, 2, 0, 1507349, 2, 0, 1507350, 2, 0, 1507351, 2, 0, 1507352, 2, 0, 1507353, 2, 0, 1507354, 2, 0, 1507355, 2, 0, 1507356, 2, 0, 1507357, 2, 0, 1507358, 2, 0, 1507359, 2, 0, 1507360, 2, 0, 1507361, 2, 0, 1572864, 2, 0, 1572865, 2, 0, 1572866, 6, 0, 1572894, 5, 0, 1572895, 2, 0, 1572896, 2, 0, 1572897, 2, 0, 1638400, 2, 0, 1638401, 6, 0, 1638431, 5, 0, 1638432, 2, 0, 1638433, 2, 0, 1703936, 2, 0, 1703968, 2, 0, 1703969, 2, 0, 1769472, 2, 0, 1769504, 2, 0, 1769505, 2, 0, 1835008, 2, 0, 1835040, 2, 0, 1835041, 2, 0, 1900544, 2, 0, 1900576, 2, 0, 1900577, 2, 0, 1966080, 2, 0, 1966112, 2, 0, 1966113, 2, 0, 2031616, 2, 0, 2031648, 2, 0, 2031649, 2, 0, 2097152, 2, 0, 2097184, 2, 0, 2097185, 2, 0, 2228223, 2, 0, 2293759, 2, 0, 2228225, 3, 0, 2228228, 3, 0, 2228229, 3, 0, 2228231, 3, 0, 2293760, 1, 0, 2293761, 1, 0, 2293762, 1, 0, 2293763, 1, 0, 2293764, 1, 0, 2293765, 1, 0, 2293766, 1, 0, 2293767, 1, 0, 2293768, 1, 0, 2293769, 1, 0, 2293770, 1, 0, 2293771, 1, 0, 2293772, 1, 0, 2293773, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2293776, 1, 0, 2293777, 1, 0, 2293778, 1, 0, 2293779, 1, 0, 2293780, 1, 0, 2293781, 1, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293787, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 1, 0, 2293791, 1, 0, 2293792, 1, 0, 2293793, 1, 0, 2359296, 1, 0, 2359297, 1, 0, 2359298, 1, 0, 2359299, 1, 0, 2359300, 1, 0, 2359301, 1, 0, 2359302, 1, 0, 2359303, 1, 0, 2359304, 1, 0, 2359305, 1, 0, 2359306, 1, 0, 2359307, 1, 0, 2359308, 1, 0, 2359309, 1, 0, 2359310, 1, 0, 2359311, 1, 0, 2359312, 1, 0, 2359313, 1, 0, 2359314, 1, 0, 2359315, 1, 0, 2359316, 1, 0, 2359317, 1, 0, 2359318, 1, 0, 2359319, 1, 0, 2359320, 1, 0, 2359321, 1, 0, 2359322, 1, 0, 2359323, 1, 0, 2359324, 1, 0, 2359325, 1, 0, 2359326, 1, 0, 2359327, 1, 0, 2359328, 1, 0, 2359329, 1, 0, 2424832, 1, 0, 2424833, 1, 0, 2424834, 1, 0, 2424835, 1, 0, 2424836, 1, 0, 2424837, 1, 0, 2424838, 1, 0, 2424839, 1, 0, 2424840, 1, 0, 2424841, 1, 0, 2424842, 1, 0, 2424843, 1, 0, 2424844, 1, 0, 2424845, 1, 0, 2424846, 1, 0, 2424847, 1, 0, 2424848, 1, 0, 2424849, 1, 0, 2424850, 1, 0, 2424851, 1, 0, 2424852, 1, 0, 2424853, 1, 0, 2424854, 1, 0, 2424855, 1, 0, 2424856, 1, 0, 2424857, 1, 0, 2424858, 1, 0, 2424859, 1, 0, 2424860, 1, 0, 2424861, 1, 0, 2424862, 1, 0, 2424863, 1, 0, 2424864, 1, 0, 2424865, 1, 0, 2490368, 1, 0, 2490369, 1, 0, 2490370, 1, 0, 2490371, 1, 0, 2490372, 1, 0, 2490373, 1, 0, 2490374, 1, 0, 2490375, 1, 0, 2490376, 1, 0, 2490377, 1, 0, 2490378, 1, 0, 2490379, 1, 0, 2490380, 1, 0, 2490381, 1, 0, 2490382, 1, 0, 2490383, 1, 0, 2490384, 1, 0, 2490385, 1, 0, 2490386, 1, 0, 2490387, 1, 0, 2490388, 1, 0, 2490389, 1, 0, 2490390, 1, 0, 2490391, 1, 0, 2490392, 1, 0, 2490393, 1, 0, 2490394, 1, 0, 2490395, 1, 0, 2490396, 1, 0, 2490397, 1, 0, 2490398, 1, 0, 2490399, 1, 0, 2490400, 1, 0, 2490401, 1, 0, 2555904, 1, 0, 2555905, 1, 0, 2555906, 1, 0, 2555907, 1, 0, 2555908, 1, 0, 2555909, 1, 0, 2555910, 1, 0, 2555911, 1, 0, 2555912, 1, 0, 2555913, 1, 0, 2555914, 1, 0, 2555915, 1, 0, 2555916, 1, 0, 2555917, 1, 0, 2555918, 1, 0, 2555919, 1, 0, 2555920, 1, 0, 2555921, 1, 0, 2555922, 1, 0, 2555923, 1, 0, 2555924, 1, 0, 2555925, 1, 0, 2555926, 1, 0, 2555927, 1, 0, 2555928, 1, 0, 2555929, 1, 0, 2555930, 1, 0, 2555931, 1, 0, 2555932, 1, 0, 2555933, 1, 0, 2555934, 1, 0, 2555935, 1, 0, 2555936, 1, 0, 2555937, 1, 0, 2621440, 1, 0, 2621441, 1, 0, 2621442, 1, 0, 2621443, 1, 0, 2621444, 1, 0, 2621445, 1, 0, 2621446, 1, 0, 2621447, 1, 0, 2621448, 1, 0, 2621449, 1, 0, 2621450, 1, 0, 2621451, 1, 0, 2621452, 1, 0, 2621453, 1, 0, 2621454, 1, 0, 2621455, 1, 0, 2621456, 1, 0, 2621457, 1, 0, 2621458, 1, 0, 2621459, 1, 0, 2621460, 1, 0, 2621461, 1, 0, 2621462, 1, 0, 2621463, 1, 0, 2621464, 1, 0, 2621465, 1, 0, 2621466, 1, 0, 2621467, 1, 0, 2621468, 1, 0, 2621469, 1, 0, 2621470, 1, 0, 2621471, 1, 0, 2621472, 1, 0, 2621473, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Niebla" type="Sprite" parent="."]
+material = SubResource( 44 )
+position = Vector2( 246, 496 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 40, 539 )
+current = true
+zoom = Vector2( 0.241, 0.195 )
+limit_left = 0
+limit_top = 333
+limit_right = 545
+limit_bottom = 653
+editor_draw_limits = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 20 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Entrada = SubResource( 45 )
+anims/FinGorgona = SubResource( 46 )
+anims/SalvasAExtrana = SubResource( 47 )
+
+[node name="ScreenShake" parent="." instance=ExtResource( 22 )]
+rutaCamara = "Main_Gorgona/Camera2D"
+
+[node name="Fin" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Fin"]
+margin_right = 344.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Extrana" parent="." instance=ExtResource( 35 )]
+position = Vector2( -192, 544 )
+scale = Vector2( -1, 1 )
+escena = "res://Escenas/Nivel 1/IntermedioEntreNivel1y2.tscn"
+mensajeSePuedeVer = false
+
+[node name="AnimatedSprite" parent="Extrana" index="0"]
+frame = 1
+
+[node name="Dialogo" parent="Extrana/CanvasLayer" index="0"]
+visible = false
+margin_left = 31.0
+margin_top = 167.0
+margin_right = 927.0
+margin_bottom = 263.0
+rect_scale = Vector2( 0.304, 0.304 )
+dialog = [ "[center]Lately, things are going from bad to worse.", "[center]The fury of the gods grows each day and is reaching its limits.", "[center]I fear there will be nothing left to live for at this rate.", "[center]But you have given me hope. I think you can stop this war just like you stopped that gorgon.", "[center]In order to do it, you must somehow convince Ra and Zeus, the supreme leaders of both sides and end this.", "[center]So let's get out of here and head to see Poseidon. Take the gorgon's head as it will be useful to you in the future." ]
+root = "Main_Gorgona/Extrana/ZonaDeDialogo"
+
+[node name="Sprite" parent="Extrana" index="4"]
+frame = 1446
+
+[node name="ZonaDeDialogo" type="Area2D" parent="Extrana"]
+position = Vector2( -50, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extrana/ZonaDeDialogo"]
+shape = SubResource( 48 )
+
+[node name="CabezaGorgona" type="Sprite" parent="."]
+visible = false
+position = Vector2( 457, 530 )
+rotation = 1.5708
+texture = ExtResource( 36 )
+hframes = 2
+frame = 1
+
+[node name="Para animacion" type="AudioStreamPlayer2D" parent="."]
+bus = "Sonido"
+[connection signal="timeout" from="Estalagtitas/TimerIzq" to="." method="_on_TimerIzq_timeout"]
+[connection signal="timeout" from="Estalagtitas/TimerDer" to="." method="_on_TimerDer_timeout"]
+[connection signal="body_entered" from="Limite_Correr" to="." method="_on_Limite_Correr_body_entered"]
+[connection signal="muriendo" from="Jugador" to="." method="_on_Jugador_muriendo"]
+[connection signal="teletransporte_muerto" from="Jugador" to="." method="_on_Jugador_teletransporte_muerto"]
+[connection signal="dead" from="Gorgona" to="." method="_on_Gorgona_dead"]
+[connection signal="fin_stun" from="Gorgona" to="." method="_on_Gorgona_fin_stun"]
+[connection signal="area_entered" from="Gorgona/Dano_Stun" to="." method="_on_Dano_Stun_area_entered"]
+[connection signal="timeout" from="Gorgona/Timer_quitar_empuje" to="Gorgona" method="_on_Timer_quitar_empuje_timeout"]
+[connection signal="area_entered" from="Gorgona/Cuerpo" to="Gorgona" method="_on_Cuerpo_area_entered"]
+[connection signal="body_entered" from="Gorgona/Cuerpo" to="Gorgona" method="_on_Cuerpo_body_entered"]
+[connection signal="invincibility_ended" from="Gorgona/Cuerpo" to="Gorgona" method="_on_Cuerpo_invincibility_ended"]
+[connection signal="invincibility_started" from="Gorgona/Cuerpo" to="Gorgona" method="_on_Cuerpo_invincibility_started"]
+[connection signal="timeout" from="Gorgona/Timer_Movimiento" to="." method="_on_Timer_Movimiento_timeout"]
+[connection signal="timeout" from="Gorgona/Timer_Movimiento" to="Gorgona" method="_on_Timer_Movimiento_timeout"]
+[connection signal="body_entered" from="Gorgona/Arriba" to="Gorgona" method="_on_Arriba_body_entered"]
+[connection signal="body_exited" from="Gorgona/Arriba" to="Gorgona" method="_on_Arriba_body_exited"]
+[connection signal="timeout" from="Gorgona/TimerArco" to="Gorgona" method="_on_TimerArco_timeout"]
+[connection signal="reinicio" from="CanvasLayer/PauseMenu" to="." method="_on_PauseMenu_reinicio"]
+[connection signal="controlesVisibles" from="Extrana/CanvasLayer/Dialogo" to="Jugador" method="_on_Dialogo_controlesVisibles"]
+[connection signal="finalice" from="Extrana/CanvasLayer/Dialogo" to="." method="_on_Dialogo_finalice"]
+
+[editable path="Antorchas/Antorcha"]
+
+[editable path="Antorchas/Antorcha2"]
+
+[editable path="Antorchas/Antorcha3"]
+
+[editable path="Antorchas/Antorcha4"]
+
+[editable path="Antorchas/Antorcha5"]
+
+[editable path="Estalagtitas/Spawn"]
+
+[editable path="Estalagtitas/Spawn/Hurtbox"]
+
+[editable path="Estalagtitas/Spawn2"]
+
+[editable path="Estalagtitas/Spawn3"]
+
+[editable path="Estalagtitas/Spawn4"]
+
+[editable path="Estalagtitas/Spawn5"]
+
+[editable path="Estalagtitas/Spawn6"]
+
+[editable path="Estalagtitas/Spawn7"]
+
+[editable path="Estalagtitas/Spawn8"]
+
+[editable path="Estalagtitas/Spawn9"]
+
+[editable path="Estalagtitas/Spawn10"]
+
+[editable path="Estalagtitas/Spawn11"]
+
+[editable path="Estalagtitas/Spawn12"]
+
+[editable path="Jugador"]
+
+[editable path="Jugador/Hurtbox"]
+
+[editable path="Jugador/Hurt_rodar"]
+
+[editable path="Jugador/MobileControls"]
+
+[editable path="Gorgona/Dano_Stun"]
+
+[editable path="Gorgona/Cuerpo_Dano"]
+
+[editable path="Gorgona/Cuerpo"]
+
+[editable path="Gorgona/Health_Boss"]
+
+[editable path="Gorgona/Spawn_Node"]
+
+[editable path="CanvasLayer/PauseMenu"]
+
+[editable path="Extrana"]
+
+[editable path="Extrana/CanvasLayer/Dialogo"]

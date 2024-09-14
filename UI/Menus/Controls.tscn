@@ -1,0 +1,893 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Menus/Marco_menu.png" type="Texture" id=2]
+[ext_resource path="res://UI/Menus/LineaDivisora.png" type="Texture" id=3]
+[ext_resource path="res://UI/Menus/ControlesXboxPlay.png" type="Texture" id=4]
+[ext_resource path="res://UI/Menus/Controls.gd" type="Script" id=5]
+[ext_resource path="res://Tileset/Tileset.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menus/ControlesSwitch.png" type="Texture" id=7]
+[ext_resource path="res://UI/Menus/Exit_lighting.png" type="Texture" id=8]
+[ext_resource path="res://UI/Menus/Exit.png" type="Texture" id=9]
+[ext_resource path="res://Sonidos/Menu/Elegir_Menu.wav" type="AudioStream" id=10]
+[ext_resource path="res://UI/Menus/ControlButton.tscn" type="PackedScene" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "Tileset.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 144, 128, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Tileset.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 80, 128, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Tileset.png 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 112, 128, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Tileset.png 3"
+3/texture = ExtResource( 6 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 112, 160, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Tileset.png 4"
+4/texture = ExtResource( 6 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 144, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Tileset.png 5"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 112, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Tileset.png 6"
+6/texture = ExtResource( 6 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 176, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Tileset.png 7"
+7/texture = ExtResource( 6 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 112, 192, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Tileset.png 8"
+8/texture = ExtResource( 6 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 80, 160, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+resource_local_to_scene = true
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="Controls" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.94902, 0.937255, 0.862745, 0.403922 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 312 )
+scale = Vector2( 0.473, 0.518 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 0.695
+margin_left = 192.0
+margin_top = 152.0
+margin_right = 905.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 713.0
+margin_bottom = 320.0
+
+[node name="Controles" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 118.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Attack" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 29.0
+margin_right = 118.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 64.0
+margin_right = 118.0
+margin_bottom = 64.0
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer2"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Roll" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 68.0
+margin_right = 118.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 103.0
+margin_right = 118.0
+margin_bottom = 103.0
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer3"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Jump" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 107.0
+margin_right = 118.0
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Jump"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 142.0
+margin_right = 118.0
+margin_bottom = 142.0
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer4"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Move" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 146.0
+margin_right = 118.0
+margin_bottom = 177.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Move"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 181.0
+margin_right = 118.0
+margin_bottom = 181.0
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer5"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Aim" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 185.0
+margin_right = 118.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Aim"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 220.0
+margin_right = 118.0
+margin_bottom = 220.0
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer6"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ability" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 224.0
+margin_right = 118.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ability"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 259.0
+margin_right = 118.0
+margin_bottom = 259.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Controles/MarginContainer7"]
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Menu" type="Label" parent="MarginContainer/HBoxContainer/Controles"]
+margin_top = 263.0
+margin_right = 118.0
+margin_bottom = 294.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Menu"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 122.0
+margin_right = 122.0
+margin_bottom = 320.0
+
+[node name="PC" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 126.0
+margin_right = 252.0
+margin_bottom = 320.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Computer" type="Label" parent="MarginContainer/HBoxContainer/PC"]
+margin_right = 126.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0588235, 0.0313726, 0.968627, 1 )
+text = "Computer"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TileMap" type="TileMap" parent="MarginContainer/HBoxContainer/PC"]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 2, 2 )
+format = 1
+tile_data = PoolIntArray( 1114127, 0, 0, 2359311, 4, 0, 3538959, 6, 0, 4849667, 1, 0, 4849693, 2, 0, 6029315, 8, 0, 6029341, 3, 0, 7274511, 7, 0, 8781839, 5, 0 )
+
+[node name="ControllesPC" type="YSort" parent="MarginContainer/HBoxContainer/PC"]
+
+[node name="ControlButtonAttack" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 35.0
+margin_right = 126.0
+margin_bottom = 67.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonMenu")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonRodar")
+action = "attack"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonAttack" index="1"]
+custom_fonts/font = SubResource( 3 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonAttack" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+focus_neighbour_top = NodePath("../../ControlButtonMenu/Button")
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonRodar" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 30.0
+margin_top = 69.0
+margin_right = 62.0
+margin_bottom = 101.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonAttack")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonJump")
+action = "rodar"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonRodar" index="1"]
+custom_fonts/font = SubResource( 4 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonRodar" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonJump" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 30.0
+margin_top = 108.0
+margin_right = 62.0
+margin_bottom = 140.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonRodar")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonMoveLeft")
+action = "jump"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonJump" index="1"]
+custom_fonts/font = SubResource( 5 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonJump" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonMoveLeft" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 6.0
+margin_top = 147.0
+margin_right = 38.0
+margin_bottom = 179.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonJump")
+focus_neighbour_right = NodePath("../ControlButtonMoveRight")
+focus_neighbour_bottom = NodePath("../ControlButtonUp")
+action = "ui_left"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveLeft" index="1"]
+custom_fonts/font = SubResource( 6 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveLeft" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonMoveRight" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 58.0
+margin_top = 147.0
+margin_right = 90.0
+margin_bottom = 179.0
+focus_neighbour_left = NodePath("../ControlButtonMoveLeft")
+focus_neighbour_top = NodePath("../ControlButtonJump")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonDown")
+action = "ui_right"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveRight" index="1"]
+custom_fonts/font = SubResource( 7 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveRight" index="2"]
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonDown" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 58.0
+margin_top = 184.0
+margin_right = 90.0
+margin_bottom = 216.0
+focus_neighbour_left = NodePath("../ControlButtonUp")
+focus_neighbour_top = NodePath("../ControlButtonMoveRight")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonHabilidad")
+action = "mirar_abajo"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonDown" index="1"]
+custom_fonts/font = SubResource( 8 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonDown" index="2"]
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonUp" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 6.0
+margin_top = 184.0
+margin_right = 38.0
+margin_bottom = 216.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonMoveLeft")
+focus_neighbour_right = NodePath("../ControlButtonDown")
+focus_neighbour_bottom = NodePath("../ControlButtonHabilidad")
+action = "mirar_arriba"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonUp" index="1"]
+custom_fonts/font = SubResource( 9 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonUp" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonHabilidad" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 30.0
+margin_top = 222.0
+margin_right = 62.0
+margin_bottom = 254.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonUp")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonMenu")
+action = "habilidad"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonHabilidad" index="1"]
+custom_fonts/font = SubResource( 10 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonHabilidad" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+focus_neighbour_right = NodePath("../../../../../../Salir")
+
+[node name="ControlButtonMenu" parent="MarginContainer/HBoxContainer/PC/ControllesPC" instance=ExtResource( 13 )]
+margin_left = 30.0
+margin_top = 268.0
+margin_right = 62.0
+margin_bottom = 300.0
+focus_neighbour_left = NodePath("../../../../../Salir")
+focus_neighbour_top = NodePath("../ControlButtonHabilidad")
+focus_neighbour_right = NodePath("../../../../../Salir")
+focus_neighbour_bottom = NodePath("../ControlButtonAttack")
+action = "menu"
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMenu" index="1"]
+custom_fonts/font = SubResource( 11 )
+
+[node name="Button" parent="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMenu" index="2"]
+focus_neighbour_left = NodePath("../../../../../../Salir")
+focus_neighbour_right = NodePath("../../../../../../Salir")
+focus_neighbour_bottom = NodePath("../../ControlButtonAttack/Button")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 256.0
+margin_right = 266.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Xbox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 270.0
+margin_right = 431.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="XboxPlay" type="Label" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_right = 161.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0627451, 0.509804, 0.101961, 1 )
+text = "Xbox/Play"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 35.0
+margin_right = 161.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer"]
+position = Vector2( 50, -5 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 69.0
+margin_right = 161.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 33 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer2"]
+position = Vector2( 50, 0 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 106.0
+margin_right = 161.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 0, 35 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer3"]
+position = Vector2( 50, 0 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 145.0
+margin_right = 161.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer4"]
+position = Vector2( 75, 0 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 6
+
+[node name="Sprite2" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer4"]
+position = Vector2( 25, 0 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 5
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 184.0
+margin_right = 161.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer5"]
+position = Vector2( 75, -2 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 7
+
+[node name="Sprite2" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer5"]
+position = Vector2( 25, -2 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 8
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 223.0
+margin_right = 161.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 33 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer6"]
+position = Vector2( 50, -3 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 1
+
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/HBoxContainer/Xbox"]
+margin_top = 260.0
+margin_right = 161.0
+margin_bottom = 295.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Xbox/MarginContainer7"]
+position = Vector2( 50, 6 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 9
+frame = 4
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 435.0
+margin_right = 445.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Switch" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 449.0
+margin_right = 546.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Switchlabel" type="Label" parent="MarginContainer/HBoxContainer/Switch"]
+margin_right = 97.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.894118, 0.0313726, 0.0313726, 1 )
+text = "Switch"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer8" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 35.0
+margin_right = 97.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer8"]
+position = Vector2( 25, -5 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+
+[node name="MarginContainer9" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 69.0
+margin_right = 97.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 0, 33 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer9"]
+position = Vector2( 25, 0 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 2
+
+[node name="MarginContainer10" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 106.0
+margin_right = 97.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer10"]
+position = Vector2( 25, 0 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 3
+
+[node name="MarginContainer11" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 145.0
+margin_right = 97.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer11"]
+position = Vector2( 50, 0 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 6
+
+[node name="Sprite2" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer11"]
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 5
+
+[node name="MarginContainer12" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 184.0
+margin_right = 97.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer12"]
+position = Vector2( 50, -2 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 7
+
+[node name="Sprite2" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer12"]
+position = Vector2( 0, -2 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 8
+
+[node name="MarginContainer13" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 223.0
+margin_right = 97.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 33 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer13"]
+position = Vector2( 25, -3 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 1
+
+[node name="MarginContainer14" type="MarginContainer" parent="MarginContainer/HBoxContainer/Switch"]
+margin_top = 260.0
+margin_right = 97.0
+margin_bottom = 295.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/Switch/MarginContainer14"]
+position = Vector2( 25, 6 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 9
+frame = 4
+
+[node name="Salir" type="TextureButton" parent="."]
+margin_left = 760.0
+margin_top = 147.5
+margin_right = 1031.0
+margin_bottom = 227.5
+rect_scale = Vector2( 0.5, 0.5 )
+focus_neighbour_left = NodePath("../MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonAttack/Button")
+focus_neighbour_right = NodePath("../MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonAttack/Button")
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+bus = "Sonido"
+[connection signal="focus_entered" from="Salir" to="." method="_on_Salir_focus_entered"]
+[connection signal="mouse_entered" from="Salir" to="." method="_on_Salir_mouse_entered"]
+[connection signal="pressed" from="Salir" to="." method="_on_Salir_pressed"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonAttack"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonRodar"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonJump"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveLeft"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMoveRight"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonDown"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonUp"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonHabilidad"]
+
+[editable path="MarginContainer/HBoxContainer/PC/ControllesPC/ControlButtonMenu"]

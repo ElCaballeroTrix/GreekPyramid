@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tileset/Objeto_Movimiento.gd" type="Script" id=1]
+
+[node name="Objeto_Movil" type="RigidBody2D" groups=[
+"cuerpos_moviles",
+]]
+collision_mask = 65
+mode = 2
+gravity_scale = 3.0
+contacts_reported = 1
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Objeto_Movil_body_entered"]

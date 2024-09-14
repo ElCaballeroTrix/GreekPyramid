@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PiedraMojada2.wav-dc188e48fe2424c0b1052bf216ba9206.sample"
+
+[deps]
+
+source_file="res://Sonidos/PiedraMojada/PiedraMojada2.wav"
+dest_files=[ "res://.import/PiedraMojada2.wav-dc188e48fe2424c0b1052bf216ba9206.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

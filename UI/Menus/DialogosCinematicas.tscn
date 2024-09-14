@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/Menus/DialogosCinematicas.gd" type="Script" id=1]
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Menus/MArco_Dialogo.png" type="Texture" id=3]
+[ext_resource path="res://Sonidos/Dialogo/blip.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 2 )
+
+[node name="DialogosCinematicas" type="RichTextLabel"]
+margin_left = 64.0
+margin_top = 488.0
+margin_right = 960.0
+margin_bottom = 584.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.0313726, 0.12549, 0.819608, 1 )
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+dialog = [ "Buenas tardes", "soy un dialogo", "Perogueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeororororoeoeoeoeoeeeeeeeeeeeeeeeeeno" ]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 451.372, 48 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( -65, -460 )
+scale = Vector2( 1, 0.918 )
+polygon = PoolVector2Array( 34, 614.379, 34, 492.375, 993, 492.375, 993, 614.379 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "Sonido"
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

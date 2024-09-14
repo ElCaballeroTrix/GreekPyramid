@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Nivel1.wav-c801014f84faef720cee6350233d6e7c.sample"
+
+[deps]
+
+source_file="res://Sonidos/Musica/Nivel1.wav"
+dest_files=[ "res://.import/Nivel1.wav-c801014f84faef720cee6350233d6e7c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

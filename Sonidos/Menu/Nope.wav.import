@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Nope.wav-84e8fd22a7d4d4cddafd549581d61f51.sample"
+
+[deps]
+
+source_file="res://Sonidos/Menu/Nope.wav"
+dest_files=[ "res://.import/Nope.wav-84e8fd22a7d4d4cddafd549581d61f51.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

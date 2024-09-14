@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RocaDestruida.wav-0b02865fe47fcd7e655159008e2d209b.sample"
+
+[deps]
+
+source_file="res://Sonidos/Rocas/RocaDestruida.wav"
+dest_files=[ "res://.import/RocaDestruida.wav-0b02865fe47fcd7e655159008e2d209b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

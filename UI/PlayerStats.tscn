@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Stats.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sonidos/Power-Ups/heartbeat.wav" type="AudioStream" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Latido"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.92549, 0.0392157, 0.0392157, 0 ), Color( 0.92549, 0.0392157, 0.0392157, 0.439216 ), Color( 0.92549, 0.0392157, 0.0392157, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="PlayerStats" instance=ExtResource( 1 )]
+max_health = 8
+
+[node name="AnimationDolor" type="AnimationPlayer" parent="." index="0"]
+anims/Latido = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.92549, 0.0392157, 0.0392157, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 2 )
+bus = "Sonido"

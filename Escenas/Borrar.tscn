@@ -1,0 +1,400 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tileset/Tileset.png" type="Texture" id=2]
+[ext_resource path="res://Jefes/Gorgona/FondoGorgona.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Jugador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tileset/Decoraciones/Pinchos/Picnhos_piedra.png" type="Texture" id=5]
+[ext_resource path="res://UI/MobileControls/SaltoMobile.png" type="Texture" id=6]
+[ext_resource path="res://UI/MobileControls/AtacarMobile.png" type="Texture" id=7]
+[ext_resource path="res://UI/MobileControls/MobileDpadPressed2.png" type="Texture" id=8]
+[ext_resource path="res://UI/MobileControls/MobileDpad0.png" type="Texture" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 128, 16, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 80, 128, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Tileset.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 112, 128, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Tileset.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 144, 128, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Tileset.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 112, 160, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Tileset.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 176, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Tileset.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 80, 160, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 3.746
+height = 12.038
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 851914, 0, 0, 851915, 0, 0, 851916, 0, 0, 851917, 0, 0, 851918, 0, 0, 851919, 0, 0, 851920, 0, 0, 851921, 0, 0, 851922, 0, 0, 851923, 0, 0, 851924, 0, 0, 851925, 0, 0, 851926, 0, 0, 851927, 0, 0, 851928, 0, 0, 851929, 0, 0, 851930, 0, 0, 851931, 0, 0, 851932, 0, 0, 851933, 0, 0, 851934, 0, 0, 851935, 0, 0, 851936, 0, 0, 851937, 0, 0, 851938, 0, 0, 851939, 0, 0, 851940, 0, 0, 851941, 0, 0, 851942, 0, 0, 851943, 0, 0, 851944, 0, 0, 851945, 0, 0, 851946, 0, 0, 851947, 0, 0, 851948, 0, 0, 851949, 0, 0, 851950, 0, 0, 851951, 0, 0, 851952, 0, 0, 851953, 0, 0, 851954, 0, 0, 851955, 0, 0, 851956, 0, 0, 851957, 0, 0, 851958, 0, 0, 851959, 0, 0, 851960, 0, 0, 851961, 0, 0, 851962, 0, 0, 851963, 0, 0, 851964, 0, 0, 851965, 0, 0, 851966, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0 )
+
+[node name="AtacarMobile" type="Sprite" parent="TileMap"]
+position = Vector2( 160, 128 )
+texture = ExtResource( 7 )
+
+[node name="MobileDpad0" type="Sprite" parent="TileMap"]
+position = Vector2( 224, 128 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="MobileDpadPressed2" type="Sprite" parent="TileMap/MobileDpad0"]
+position = Vector2( 0, -34 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+
+[node name="MobileDpad1" type="Sprite" parent="TileMap"]
+position = Vector2( 576, 128 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="MobileDpadPressed2" type="Sprite" parent="TileMap/MobileDpad1"]
+position = Vector2( 34, 0 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="MobileDpad3" type="Sprite" parent="TileMap"]
+position = Vector2( -605, 128 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="MobileDpadPressed2" type="Sprite" parent="TileMap/MobileDpad3"]
+position = Vector2( 0, 34 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="MobileDpad2" type="Sprite" parent="TileMap"]
+position = Vector2( -140, 128 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
+[node name="MobileDpadPressed2" type="Sprite" parent="TileMap/MobileDpad2"]
+position = Vector2( -34, 0 )
+texture = ExtResource( 8 )
+
+[node name="SaltoMobile" type="Sprite" parent="TileMap"]
+position = Vector2( 96, 128 )
+texture = ExtResource( 6 )
+
+[node name="SaltoMobile2" type="Sprite" parent="TileMap"]
+position = Vector2( 448, 128 )
+texture = ExtResource( 6 )
+
+[node name="AtacarMobile2" type="Sprite" parent="TileMap"]
+position = Vector2( 512, 128 )
+texture = ExtResource( 7 )
+
+[node name="AtacarMobile3" type="Sprite" parent="TileMap"]
+position = Vector2( -208, 128 )
+texture = ExtResource( 7 )
+
+[node name="SaltoMobile3" type="Sprite" parent="TileMap"]
+position = Vector2( -272, 128 )
+texture = ExtResource( 6 )
+
+[node name="SaltoMobile4" type="Sprite" parent="TileMap"]
+position = Vector2( -736, 128 )
+texture = ExtResource( 6 )
+
+[node name="AtacarMobile4" type="Sprite" parent="TileMap"]
+position = Vector2( -672, 128 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -672, 186 )
+collision_layer = 64
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 5 )
+
+[node name="Objeto_Pupa" parent="StaticBody2D" instance=ExtResource( 1 )]
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="StaticBody2D/Objeto_Pupa" index="0"]
+position = Vector2( 0, 2 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 1.423 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 123.0
+margin_top = 127.0
+margin_right = 133.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 129.0
+margin_top = 123.0
+margin_right = 139.0
+margin_bottom = 125.0
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 187.0
+margin_top = 127.0
+margin_right = 197.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect3"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = -181.0
+margin_top = 127.0
+margin_right = -171.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect4"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = -245.0
+margin_top = 127.0
+margin_right = -235.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect5"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+margin_left = 475.0
+margin_top = 127.0
+margin_right = 485.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect6"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+margin_left = 539.0
+margin_top = 127.0
+margin_right = 549.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect7"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+margin_left = -645.0
+margin_top = 127.0
+margin_right = -635.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect8"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+margin_left = -709.0
+margin_top = 127.0
+margin_right = -699.0
+margin_bottom = 129.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect9"]
+margin_left = 6.0
+margin_top = -4.0
+margin_right = 16.0001
+margin_bottom = -2.00008
+rect_rotation = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, -16 )
+
+[node name="Camera2D" parent="Jugador" index="9"]
+limit_left = -2001
+limit_right = 2785
+limit_bottom = 200
+
+[node name="HealthUI" parent="Jugador/CanvasLayer" index="0"]
+visible = true
+
+[editable path="StaticBody2D/Objeto_Pupa"]
+
+[editable path="Jugador"]

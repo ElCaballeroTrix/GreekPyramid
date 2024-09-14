@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Death.wav-5acf20660c40eef2823a227eef056698.sample"
+
+[deps]
+
+source_file="res://Sonidos/Dano/Death.wav"
+dest_files=[ "res://.import/Death.wav-5acf20660c40eef2823a227eef056698.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

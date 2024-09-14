@@ -1,0 +1,309 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://TrixKnight/TrixKnight.png" type="Texture" id=1]
+[ext_resource path="res://UI/Menus/Marco_menu.png" type="Texture" id=2]
+[ext_resource path="res://UI/Menus/Exit_Save_lighting.png" type="Texture" id=3]
+[ext_resource path="res://UI/Menus/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://UI/Menus/Options_lighting.png" type="Texture" id=5]
+[ext_resource path="res://UI/Menus/Exit_Save.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menus/Continue.png" type="Texture" id=7]
+[ext_resource path="res://UI/Menus/Continue_lighting.png" type="Texture" id=8]
+[ext_resource path="res://UI/Menus/Espada.png" type="Texture" id=9]
+[ext_resource path="res://UI/Menus/Restart.png" type="Texture" id=10]
+[ext_resource path="res://UI/Menus/Restart_lighting.png" type="Texture" id=11]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/DamageUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/Menus/Options.png" type="Texture" id=14]
+[ext_resource path="res://Sonidos/Menu/Elegir_Menu.wav" type="AudioStream" id=15]
+[ext_resource path="res://icon.png" type="Texture" id=16]
+[ext_resource path="res://Jefes/Gorgona/CabezaGorgonaMenuActivo.png" type="Texture" id=17]
+[ext_resource path="res://Jefes/Gorgona/CabezaGorgonaMenu.png.png" type="Texture" id=18]
+[ext_resource path="res://Jefes/Caribdis/ColmilloCaribdisMenu.png" type="Texture" id=19]
+[ext_resource path="res://Jefes/Caribdis/ColmilloCaribdisMenuActivo.png" type="Texture" id=20]
+[ext_resource path="res://UI/Power-Ups/OrbeAgua.png" type="Texture" id=21]
+[ext_resource path="res://Jefes/Serpopardo/CabezaSerpopardoMenuPausa.png.png" type="Texture" id=22]
+[ext_resource path="res://Jefes/Serpopardo/CabezaSerpopardoMenuActivo.png.png" type="Texture" id=23]
+[ext_resource path="res://Jefes/Serpopardo/CabezaSerpopardoMenuHover.png" type="Texture" id=24]
+[ext_resource path="res://Jefes/Gorgona/CabezaGorgonaMenuHover.png" type="Texture" id=25]
+[ext_resource path="res://Jefes/Caribdis/ColmilloCaribdisMenuHover.png" type="Texture" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "1",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 70, 60 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 0, 70, 60 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="PauseMenu" type="Node2D"]
+pause_mode = 2
+scale = Vector2( 0.334, 0.334 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.94902, 0.937255, 0.862745, 0.403922 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 312 )
+scale = Vector2( 0.473177, 0.517581 )
+frames = SubResource( 1 )
+animation = "2"
+
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( 512, 312 )
+scale = Vector2( 0.473177, 0.517581 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 280, 264 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 0.695
+margin_left = 192.0
+margin_top = 152.0
+margin_right = 832.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 369.0
+margin_right = 640.0
+margin_bottom = 332.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="TextureButton1" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_right = 271.0
+margin_bottom = 80.0
+focus_neighbour_left = NodePath("../../../Monstruos/HBoxContainer/Griegos/Gorgona")
+focus_neighbour_top = NodePath("../TextureButton4")
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 271.0
+margin_bottom = 164.0
+focus_neighbour_left = NodePath("../../../Monstruos/HBoxContainer/Griegos/Gorgona")
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 271.0
+margin_bottom = 248.0
+focus_neighbour_left = NodePath("../../../Monstruos/HBoxContainer/Griegos/Gorgona")
+texture_normal = ExtResource( 14 )
+texture_hover = ExtResource( 5 )
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_top = 252.0
+margin_right = 271.0
+margin_bottom = 332.0
+focus_neighbour_left = NodePath("../../../Monstruos/HBoxContainer/Griegos/Gorgona")
+focus_neighbour_bottom = NodePath("../TextureButton1")
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 3 )
+
+[node name="Monstruos" type="MarginContainer" parent="."]
+margin_left = 380.0
+margin_top = 150.0
+margin_right = 530.0
+margin_bottom = 418.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Monstruos"]
+margin_right = 150.0
+size_flags_vertical = 0
+
+[node name="Griegos" type="VBoxContainer" parent="Monstruos/HBoxContainer"]
+
+[node name="Gorgona" type="TextureButton" parent="Monstruos/HBoxContainer/Griegos"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+focus_neighbour_right = NodePath("../../../../MarginContainer/VBoxContainer/TextureButton1")
+focus_neighbour_bottom = NodePath("../Caribdis")
+toggle_mode = true
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 25 )
+
+[node name="Caribdis" type="TextureButton" parent="Monstruos/HBoxContainer/Griegos"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+focus_neighbour_top = NodePath("../Gorgona")
+focus_neighbour_right = NodePath("../../../../MarginContainer/VBoxContainer/TextureButton1")
+toggle_mode = true
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 26 )
+
+[node name="TextureButton3" type="TextureButton" parent="Monstruos/HBoxContainer/Griegos"]
+visible = false
+margin_top = 31.0
+margin_right = 64.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 16 )
+
+[node name="TextureButton4" type="TextureButton" parent="Monstruos/HBoxContainer/Griegos"]
+visible = false
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 16 )
+
+[node name="Egipcios" type="VBoxContainer" parent="Monstruos/HBoxContainer"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="Serpopardo" type="TextureButton" parent="Monstruos/HBoxContainer/Egipcios"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+focus_neighbour_left = NodePath("../../Griegos/Gorgona")
+focus_neighbour_right = NodePath("../../../../MarginContainer/VBoxContainer/TextureButton1")
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+
+[node name="TextureButton2" type="TextureButton" parent="Monstruos/HBoxContainer/Egipcios"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 16 )
+
+[node name="TextureButton3" type="TextureButton" parent="Monstruos/HBoxContainer/Egipcios"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 16 )
+
+[node name="TextureButton4" type="TextureButton" parent="Monstruos/HBoxContainer/Egipcios"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 16 )
+
+[node name="HealthUI" parent="." instance=ExtResource( 12 )]
+margin_left = 208.0
+margin_top = 424.0
+margin_right = 268.0
+margin_bottom = 439.0
+
+[node name="HeartUIEmpty" parent="HealthUI" index="0"]
+rect_scale = Vector2( 2, 2 )
+
+[node name="HeartUIFull" parent="HealthUI" index="1"]
+rect_scale = Vector2( 2, 2 )
+
+[node name="Knight" parent="HealthUI" index="4"]
+visible = false
+
+[node name="MiddleLine" parent="HealthUI" index="5"]
+visible = false
+
+[node name="LineLeftEnd" parent="HealthUI" index="6"]
+visible = false
+
+[node name="LineRightEnd" parent="HealthUI" index="7"]
+visible = false
+
+[node name="Habilidades" parent="HealthUI" index="8"]
+visible = false
+
+[node name="DamageUI" parent="." instance=ExtResource( 13 )]
+visible = false
+margin_left = 218.766
+margin_top = 400.0
+margin_right = 218.766
+margin_bottom = 400.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Sonido"
+
+[node name="SonidoEncima" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+bus = "Sonido"
+
+[node name="Orbes" type="YSort" parent="."]
+position = Vector2( 224.694, 400 )
+
+[node name="OrbePoseidon" type="TextureRect" parent="Orbes"]
+visible = false
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Llaves" type="YSort" parent="."]
+position = Vector2( 300, 400 )
+
+[node name="LlaveIsis" type="TextureRect" parent="Llaves"]
+visible = false
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/TextureButton1" to="." method="_on_TextureButton1_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureButton1" to="." method="_on_TextureButton1_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton1" to="." method="_on_TextureButton1_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/TextureButton4" to="." method="_on_TextureButton4_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureButton4" to="." method="_on_TextureButton4_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="focus_entered" from="Monstruos/HBoxContainer/Griegos/Gorgona" to="." method="_on_Gorgona_focus_entered"]
+[connection signal="mouse_entered" from="Monstruos/HBoxContainer/Griegos/Gorgona" to="." method="_on_Gorgona_mouse_entered"]
+[connection signal="pressed" from="Monstruos/HBoxContainer/Griegos/Gorgona" to="." method="_on_Gorgona_pressed"]
+[connection signal="focus_entered" from="Monstruos/HBoxContainer/Griegos/Caribdis" to="." method="_on_Caribdis_focus_entered"]
+[connection signal="mouse_entered" from="Monstruos/HBoxContainer/Griegos/Caribdis" to="." method="_on_Caribdis_mouse_entered"]
+[connection signal="pressed" from="Monstruos/HBoxContainer/Griegos/Caribdis" to="." method="_on_Caribdis_pressed"]
+[connection signal="focus_entered" from="Monstruos/HBoxContainer/Egipcios/Serpopardo" to="." method="_on_Serpopardo_focus_entered"]
+[connection signal="mouse_entered" from="Monstruos/HBoxContainer/Egipcios/Serpopardo" to="." method="_on_Serpopardo_mouse_entered"]
+[connection signal="pressed" from="Monstruos/HBoxContainer/Egipcios/Serpopardo" to="." method="_on_Serpopardo_pressed"]
+
+[editable path="HealthUI"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SerpoPardoCansado.wav-c3490e2aae1eb7badafc504a4f219440.sample"
+
+[deps]
+
+source_file="res://Sonidos/Jefes/SerpoPardo/SerpoPardoCansado.wav"
+dest_files=[ "res://.import/SerpoPardoCansado.wav-c3490e2aae1eb7badafc504a4f219440.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

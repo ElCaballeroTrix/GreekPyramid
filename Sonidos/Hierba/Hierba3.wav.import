@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hierba3.wav-8e875b8257bebee6ee8e41301485ca0c.sample"
+
+[deps]
+
+source_file="res://Sonidos/Hierba/Hierba3.wav"
+dest_files=[ "res://.import/Hierba3.wav-8e875b8257bebee6ee8e41301485ca0c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

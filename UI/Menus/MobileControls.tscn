@@ -1,0 +1,167 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://UI/MobileControls/MobileDpadPressed.png.png" type="Texture" id=1]
+[ext_resource path="res://UI/Menus/MobileControls.gd" type="Script" id=2]
+[ext_resource path="res://UI/MobileControls/AtacarMobile.png" type="Texture" id=3]
+[ext_resource path="res://UI/MobileControls/GorgonaMobile.png" type="Texture" id=4]
+[ext_resource path="res://UI/MobileControls/AtacarMobilePressed.png" type="Texture" id=5]
+[ext_resource path="res://UI/MobileControls/MobileDpad0.png" type="Texture" id=6]
+[ext_resource path="res://UI/MobileControls/SaltoMobilePressed.png" type="Texture" id=7]
+[ext_resource path="res://UI/MobileControls/SaltoMobile.png" type="Texture" id=8]
+[ext_resource path="res://UI/MobileControls/RodarMobilePressed.png" type="Texture" id=9]
+[ext_resource path="res://UI/MobileControls/RodarMobile.png" type="Texture" id=10]
+[ext_resource path="res://UI/MobileControls/MobileDpadPressed2.png" type="Texture" id=11]
+[ext_resource path="res://UI/MobileControls/MobileDpadNotPresed2.png.png" type="Texture" id=12]
+[ext_resource path="res://UI/MobileControls/GorgonaMobilePressed.png" type="Texture" id=13]
+[ext_resource path="res://UI/MobileControls/MobileDpadNotPressed.png.png" type="Texture" id=14]
+[ext_resource path="res://UI/MobileControls/MenuIconPressed.png" type="Texture" id=15]
+[ext_resource path="res://UI/MobileControls/MenuIcon.png" type="Texture" id=16]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 30.0
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( -20, 0, 30, -50, 30, 50 )
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 30.0
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, -29.5, 94, 52, -94, 52 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 29.5, 0, -52, 94, -52, -94 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/MobileDpadNotPresed2.png.png-bc6c239facab8c777fb72ccb4a9c99b2.stex"
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/MobileDpadPressed2.png-c68569b5bb43bbc1e66b3c99ef9aa756.stex"
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 29.5, 0, -49, 94, -49, -94 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, -29.5, 94, 52, -94, 52 )
+
+[node name="MobileControls" type="CanvasLayer"]
+layer = 0
+script = ExtResource( 2 )
+
+[node name="MobileButtons" type="YSort" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
+
+[node name="Menu" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 312, 5 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 16 )
+pressed = ExtResource( 15 )
+shape = SubResource( 1 )
+passby_press = true
+action = "ui_cancel"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 264, 149 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 5 )
+shape = SubResource( 8 )
+passby_press = true
+action = "attack"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 288, 174 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 7 )
+shape = SubResource( 9 )
+passby_press = true
+action = "jump"
+visibility_mode = 1
+
+[node name="Roll" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 312, 149 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 9 )
+shape = SubResource( 12 )
+passby_press = true
+action = "rodar"
+visibility_mode = 1
+
+[node name="Ability" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 288, 121 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 13 )
+shape = SubResource( 11 )
+passby_press = true
+action = "habilidad"
+visibility_mode = 1
+
+[node name="DPAD" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 8, 121 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 6 )
+visibility_mode = 1
+
+[node name="Up" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 56.6, 156.4 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 1 )
+shape = SubResource( 2 )
+passby_press = true
+action = "mirar_arriba"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 8.6, 149.2 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 11 )
+shape = SubResource( 3 )
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 84.2, 169.6 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.6 )
+normal = SubResource( 4 )
+pressed = SubResource( 5 )
+shape = SubResource( 6 )
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="Down" type="TouchScreenButton" parent="MobileButtons"]
+modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 36.2, 162.4 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 1 )
+shape = SubResource( 7 )
+passby_press = true
+action = "mirar_abajo"
+visibility_mode = 1

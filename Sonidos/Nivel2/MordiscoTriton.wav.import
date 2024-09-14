@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MordiscoTriton.wav-8feb1b42d2d07052328214d36ffa0c4f.sample"
+
+[deps]
+
+source_file="res://Sonidos/Nivel2/MordiscoTriton.wav"
+dest_files=[ "res://.import/MordiscoTriton.wav-8feb1b42d2d07052328214d36ffa0c4f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,267 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://UI/Menus/PopUpsTutorial.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tileset/popuptutorial2.png" type="Texture" id=2]
+[ext_resource path="res://Videos/HabilidadesActivadas.ogv" type="VideoStream" id=3]
+[ext_resource path="res://Tileset/Enter.png" type="Texture" id=4]
+[ext_resource path="res://Escenas/Nivel 1/IntermedioEntreNivel1y2.gd" type="Script" id=5]
+[ext_resource path="res://UI/Corazones_full.png.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menus/PauseMenu.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "EnterCicleIntermedioNivel1y2"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PopUpsTutorial/Enter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PopUpsTutorial2/Enter2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PopUpsTutorial2/Heart:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "PrimerMensaje"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PopUpsTutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PopUpsTutorial:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PopUpsTutorial2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PopUpsTutorial/VideoPlayer:paused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SegundoMensaje"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PopUpsTutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PopUpsTutorial:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PopUpsTutorial2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PopUpsTutorial2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="IntermedioEntreNivel1y2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 344.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EnterCicleIntermedioNivel1y2 = SubResource( 1 )
+anims/PrimerMensaje = SubResource( 2 )
+anims/SegundoMensaje = SubResource( 3 )
+
+[node name="PopUpsTutorial" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 0.336, 0.336 )
+
+[node name="ColorRect" parent="PopUpsTutorial" index="0"]
+color = Color( 0.141176, 0.427451, 0.662745, 0.784314 )
+
+[node name="MarginContainer" parent="PopUpsTutorial" index="1"]
+rect_min_size = Vector2( 1, 1 )
+custom_constants/margin_top = 0
+custom_constants/margin_bottom = 0
+
+[node name="Sprite" parent="PopUpsTutorial/MarginContainer" index="0"]
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" parent="PopUpsTutorial/MarginContainer" index="1"]
+rect_clip_content = false
+bbcode_text = "
+[center]You have acquiered the head of a Gorgon. With it, you can stun enemies for a short period of time. [/center]
+
+[center]Select it in the menu and see Controls in the Options Menu for more details [/center] 
+
+"
+text = "
+You have acquiered the head of a Gorgon. With it, you can stun enemies for a short period of time. 
+
+Select it in the menu and see Controls in the Options Menu for more details  
+
+"
+
+[node name="Enter" type="Sprite" parent="PopUpsTutorial"]
+position = Vector2( 780, 440 )
+texture = ExtResource( 4 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="PopUpsTutorial"]
+margin_left = 380.952
+margin_top = 309.524
+margin_right = 620.952
+margin_bottom = 444.524
+stream = ExtResource( 3 )
+volume_db = -80.0
+autoplay = true
+paused = true
+bus = "Sonido"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopUpsTutorial2" parent="." instance=ExtResource( 1 )]
+visible = false
+scale = Vector2( 0.336, 0.336 )
+
+[node name="ColorRect" parent="PopUpsTutorial2" index="0"]
+color = Color( 0.141176, 0.427451, 0.662745, 0.784314 )
+
+[node name="Sprite" parent="PopUpsTutorial2/MarginContainer" index="0"]
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" parent="PopUpsTutorial2/MarginContainer" index="1"]
+bbcode_text = "
+
+
+
+[center]Everytime you kill a special enemy, you will obtain a new weapon which will be accesible in the pause menu.
+
+Your life will also increase."
+text = "
+
+
+
+Everytime you kill a special enemy, you will obtain a new weapon which will be accesible in the pause menu.
+
+Your life will also increase."
+
+[node name="Enter2" type="Sprite" parent="PopUpsTutorial2"]
+position = Vector2( 780, 440 )
+texture = ExtResource( 4 )
+
+[node name="Heart" type="Sprite" parent="PopUpsTutorial2"]
+position = Vector2( 520, 370 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[editable path="PopUpsTutorial"]
+
+[editable path="PopUpsTutorial2"]

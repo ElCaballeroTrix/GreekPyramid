@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Menus/Espada.png" type="Texture" id=1]
+[ext_resource path="res://UI/DamageUI.gd" type="Script" id=2]
+
+[node name="DamageUI" type="Control"]
+margin_right = 14.0
+margin_bottom = 21.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sword" type="TextureRect" parent="."]
+margin_right = 7.0
+margin_bottom = 14.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

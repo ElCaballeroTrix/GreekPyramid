@@ -1,0 +1,426 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TrixKnight/Pegaso.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Pegaso.gd" type="Script" id=3]
+[ext_resource path="res://Sonidos/Pegaso/AlasPegaso.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sonidos/Pegaso/PegasoRespira.wav" type="AudioStream" id=5]
+[ext_resource path="res://Shaders/ObjectFloating.shader" type="Shader" id=6]
+[ext_resource path="res://UI/Power-Ups/CorazonBrilla3.png" type="Texture" id=7]
+[ext_resource path="res://UI/Corazones_nofull.png.png" type="Texture" id=8]
+[ext_resource path="res://UI/Corazones_full.png.png" type="Texture" id=9]
+[ext_resource path="res://UI/Power-Ups/CorazonBrilla1.png" type="Texture" id=10]
+[ext_resource path="res://UI/Power-Ups/CorazonBrilla2.png" type="Texture" id=11]
+[ext_resource path="res://TrixKnight/PegasoCabeza.png" type="Texture" id=12]
+[ext_resource path="res://UI/LeftLineEnd.png" type="Texture" id=13]
+[ext_resource path="res://UI/MiddleLine.png" type="Texture" id=14]
+[ext_resource path="res://UI/RightLineEnd.png" type="Texture" id=15]
+[ext_resource path="res://Shaders/Blink.shader" type="Shader" id=16]
+[ext_resource path="res://Fondos/Death_Scene2.png" type="Texture" id=17]
+[ext_resource path="res://Fondos/Death_Scene1.png" type="Texture" id=18]
+[ext_resource path="res://Sonidos/Power-Ups/heartbeat.wav" type="AudioStream" id=19]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 16 )
+shader_param/active = false
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 32.0
+
+[sub_resource type="Animation" id=3]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioPegaso")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.4 )
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17, 18, 19, 20, 21 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioPegaso")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.4 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 9.9
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8, 8.2, 8.4, 8.6, 8.8, 9, 9.2, 9.4, 9.6, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 4, 5, 6, 7, 8, 9, 10, 11, 12, 4, 5, 6, 7, 8, 9, 10, 11, 12, 4, 5, 6, 7, 8, 9, 10, 11, 12, 4, 5, 6, 7, 8, 9, 10, 11, 12, 4 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioPegaso")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "MuertoPegaso"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("FondoMuerte1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 580, 0 ), Vector2( 395.5, -3.563 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FondoMuerte1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FondoMuerte2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -530, 0 ), Vector2( -371, -3.563 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FondoMuerte2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/Hearts:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 32, 33, 32, 33, 32, 33, 32, 33, 32, 33, 32 ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "derrotado"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 6 )
+shader_param/onoff = 1.0
+shader_param/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 6 )
+shader_param/onoff = 1.0
+shader_param/intensity = 1.0
+
+[sub_resource type="AnimatedTexture" id=10]
+frames = 4
+fps = 7.0
+frame_0/texture = ExtResource( 9 )
+frame_1/texture = ExtResource( 10 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 11 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 7 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="Animation" id=11]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "LatidoPegaso"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.92549, 0.0392157, 0.0392157, 0 ), Color( 0.92549, 0.0392157, 0.0392157, 0.439216 ), Color( 0.92549, 0.0392157, 0.0392157, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioLatido")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="Pegaso" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+texture = ExtResource( 2 )
+hframes = 34
+frame = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 6 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="AnimacionPegaso" type="AnimationPlayer" parent="."]
+anims/CorreConJugadorPegaso = SubResource( 3 )
+anims/CorrerPegaso = SubResource( 4 )
+anims/IdlePegaso = SubResource( 5 )
+anims/MuertoPegaso = SubResource( 6 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 1 )]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 8, 0 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="AudioPegaso" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1000.0
+bus = "Sonido"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hearts" type="YSort" parent="CanvasLayer"]
+visible = false
+position = Vector2( 34, 2 )
+
+[node name="HeartsEmpty" type="TextureRect" parent="CanvasLayer/Hearts"]
+material = SubResource( 8 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 41.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.965, 0.965 )
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartsFull" type="TextureRect" parent="CanvasLayer/Hearts"]
+material = SubResource( 9 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 41.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.965, 0.965 )
+texture = SubResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cabeza" type="Sprite" parent="CanvasLayer/Hearts"]
+position = Vector2( -26, -2 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+centered = false
+flip_h = true
+
+[node name="LeftLine" type="Sprite" parent="CanvasLayer/Hearts"]
+position = Vector2( -26, 17 )
+texture = ExtResource( 13 )
+
+[node name="MiddleLine" type="Sprite" parent="CanvasLayer/Hearts"]
+position = Vector2( 8, 17 )
+scale = Vector2( 6, 1 )
+texture = ExtResource( 14 )
+
+[node name="RightLine" type="Sprite" parent="CanvasLayer/Hearts"]
+position = Vector2( 37, 17 )
+texture = ExtResource( 15 )
+
+[node name="TimerHearts" type="Timer" parent="CanvasLayer"]
+wait_time = 10.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 352.0
+margin_bottom = 208.0
+color = Color( 0.92549, 0.0392157, 0.0392157, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationBlinkPegaso" type="AnimationPlayer" parent="."]
+anims/BlinkPegaso = SubResource( 11 )
+anims/StopBlinkPegaso = SubResource( 12 )
+
+[node name="FondoMuerte1" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 580, 0 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 10
+texture = ExtResource( 18 )
+
+[node name="FondoMuerte2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -530, 0 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 10
+texture = ExtResource( 17 )
+
+[node name="AnimacionLatido" type="AnimationPlayer" parent="."]
+anims/LatidoPegaso = SubResource( 13 )
+
+[node name="AudioLatido" type="AudioStreamPlayer" parent="."]
+bus = "Sonido"
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
+[connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
+[connection signal="timeout" from="CanvasLayer/TimerHearts" to="." method="_on_TimerHearts_timeout"]
+
+[editable path="Hurtbox"]

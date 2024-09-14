@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PalomaVolando.wav-4ad302ee60f785400d4c1ca310951e5f.sample"
+
+[deps]
+
+source_file="res://Sonidos/Enemigos/PalomaVolando.wav"
+dest_files=[ "res://.import/PalomaVolando.wav-4ad302ee60f785400d4c1ca310951e5f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

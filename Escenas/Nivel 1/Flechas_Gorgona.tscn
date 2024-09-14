@@ -1,0 +1,149 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Jefes/Gorgona/flecha1.png" type="Texture" id=2]
+[ext_resource path="res://Jefes/Gorgona/flecha2.png" type="Texture" id=3]
+[ext_resource path="res://Jefes/Gorgona/flecha0.png" type="Texture" id=4]
+[ext_resource path="res://Escenas/Nivel 1/Flechas_Gorgona.gd" type="Script" id=5]
+[ext_resource path="res://Tileset/Decoraciones/Ballesta con flecha/Ballestero.png" type="Texture" id=6]
+[ext_resource path="res://Enemigos/Nivel2/Tinta.png" type="Texture" id=7]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.446154, 1 )
+colors = PoolColorArray( 0.647059, 0.572549, 0.572549, 1, 0.647059, 0.572549, 0.572549, 0.67451, 0.298039, 0.294118, 0.294118, 0.478431 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.835227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.417045 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
+angular_velocity = 350.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.0
+angle = 45.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 6 ) ],
+"loop": false,
+"name": "Flecha(Ballestero)",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Tinta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Flecha(Gorgona)",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 1.332
+height = 5.027
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 2, 1 )
+
+[sub_resource type="Curve" id=10]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0.0163265, 277.364 ), 0.0, 0.0, 0, 0, Vector2( 1, -17.1818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.0901961 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="Curve" id=14]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.527273 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 3, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 14.0
+gravity = Vector3( 50, 0, 0 )
+initial_velocity = 40.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 11 )
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+tangential_accel = 0.72
+tangential_accel_random = 1.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="FireEffect" type="Particles2D" parent="."]
+position = Vector2( 3.351, 0 )
+scale = Vector2( 1.5, 1.5 )
+amount = 200
+process_material = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 7 )
+animation = "Tinta"
+playing = true
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 2.655, -0.099 )
+rotation = 1.5708
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.583, 0.22 )
+shape = SubResource( 9 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 13.735, -0.267 )
+lifetime = 0.5
+process_material = SubResource( 16 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 300.0
+bus = "Sonido"
+[connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+
+[editable path="Hitbox"]

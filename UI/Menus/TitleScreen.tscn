@@ -1,0 +1,820 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://UI/Menus/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Fondos/Titulo/THE.png" type="Texture" id=2]
+[ext_resource path="res://Fondos/Titulo/Sol.png" type="Texture" id=3]
+[ext_resource path="res://Fondos/Titulo/SOMBRA_TEXTO.png" type="Texture" id=4]
+[ext_resource path="res://Fondos/Titulo/PYRAMID.png" type="Texture" id=5]
+[ext_resource path="res://Fondos/Titulo/Sombras.png" type="Texture" id=6]
+[ext_resource path="res://Fondos/Titulo/Naranja.png" type="Texture" id=7]
+[ext_resource path="res://Fondos/Titulo/Piramide.png" type="Texture" id=8]
+[ext_resource path="res://Fondos/Titulo/Columna_Derecha.png" type="Texture" id=9]
+[ext_resource path="res://Fondos/Titulo/Azul.png" type="Texture" id=10]
+[ext_resource path="res://Fondos/Titulo/Columna_Izquierda.png" type="Texture" id=11]
+[ext_resource path="res://Fondos/Titulo/GREEK.png" type="Texture" id=12]
+[ext_resource path="res://Fondos/Titulo/Arena_Fondo1.png" type="Texture" id=13]
+[ext_resource path="res://Fondos/Titulo/Hierba_Fondo1.png" type="Texture" id=14]
+[ext_resource path="res://Fondos/Titulo/Arena_Fondo2.png" type="Texture" id=15]
+[ext_resource path="res://Fondos/Titulo/Hierba_Fondo3.png" type="Texture" id=16]
+[ext_resource path="res://Fondos/Titulo/Arena_Fondo3.png" type="Texture" id=17]
+[ext_resource path="res://Fondos/Titulo/Hierba_Fondo2.png" type="Texture" id=18]
+[ext_resource path="res://Fondos/Titulo/Hierba.png" type="Texture" id=19]
+[ext_resource path="res://Fondos/Titulo/Arena.png" type="Texture" id=20]
+[ext_resource path="res://TrixKnight/TrixKnight.png" type="Texture" id=21]
+[ext_resource path="res://Fondos/Titulo/Play.png" type="Texture" id=22]
+[ext_resource path="res://Fondos/Titulo/Play_Simbolos.png" type="Texture" id=23]
+[ext_resource path="res://Fondos/Titulo/EXIT.png" type="Texture" id=24]
+[ext_resource path="res://Fondos/Titulo/Options_Rayo.png" type="Texture" id=25]
+[ext_resource path="res://Fondos/Titulo/Options.png" type="Texture" id=26]
+[ext_resource path="res://Fondos/Titulo/EXIT_Ra.png" type="Texture" id=27]
+[ext_resource path="res://Sonidos/Menu/Elegir_Menu.wav" type="AudioStream" id=28]
+[ext_resource path="res://UI/Menus/Botones.gd" type="Script" id=29]
+[ext_resource path="res://Sonidos/Menu/Columnas.wav" type="AudioStream" id=30]
+[ext_resource path="res://Sonidos/Menu/Piramide.wav" type="AudioStream" id=31]
+[ext_resource path="res://Sonidos/Menu/Letras.wav" type="AudioStream" id=32]
+[ext_resource path="res://icon.png" type="Texture" id=33]
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=34]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BucleFondo"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxBackground/Arena_Fondo3/ArenaFondo3Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxBackground/Arena_Fondo2/ArenaFondo2Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ParallaxBackground/Arena_Fondo1/ArenaFondo1Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ParallaxBackground/Hierba_Fondo3/HierbaFondo3Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ParallaxBackground/Hierba_Fondo2/HierbaFondo2Sprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ParallaxBackground/Hierba_Fondo1/HierbaFondo1Sprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ParallaxBackground/Hierba/Hierba:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ParallaxBackground/Arena/Arena:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 10, 11, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Titulo"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("THE:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 6, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -900 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GREEK:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -900 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PYRAMID:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 6, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -900 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Columna_Derecha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 6, 9.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -900 ), Vector2( 0, -900 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Columna_Izquierda:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 6, 10, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -900 ), Vector2( 0, -900 ), Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sombra_Texto:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 6, 11, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Piramide:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 6, 11, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Azul:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 6, 12, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Naranja:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 6, 12, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sol:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 6, 12, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sombras:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 6, 12, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 13.9, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "permitir_texto"
+}, {
+"args": [  ],
+"method": "iniciar_ciclo"
+} ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("ParallaxBackground/ParallaxLayer/Jugador:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("ParallaxBackground/Botones/Menu_Principal:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ParallaxBackground/Hierba_Fondo1/HierbaFondo1Sprite:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("ParallaxBackground/Hierba_Fondo2/HierbaFondo2Sprite:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("ParallaxBackground/Hierba_Fondo3/HierbaFondo3Sprite:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("ParallaxBackground/Hierba/Hierba:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 6, 14, 15, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/18/type = "audio"
+tracks/18/path = NodePath("AudioStreamPlayer")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 31 )
+} ],
+"times": PoolRealArray( 6.2, 7.2, 8.2, 10.6 )
+}
+tracks/19/type = "audio"
+tracks/19/path = NodePath("AudioStreamPlayer2")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 30 )
+} ],
+"times": PoolRealArray( 9.3 )
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Sprite:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 5.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Sprite:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 2.1, 3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Jugar:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Opciones:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Salir:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Jugar:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 14, 14.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Opciones:modulate")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 14, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("ParallaxBackground/Botones/Menu_Principal/Salir:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 14, 14.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Jugador_Correr"
+length = 0.55
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/Jugador:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 7 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 34 )
+
+[node name="TitleScreen" type="Node"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Titulo"
+anims/BucleFondo = SubResource( 1 )
+anims/Titulo = SubResource( 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="Arena_Fondo3" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -50 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="ArenaFondo3Sprite" type="Sprite" parent="ParallaxBackground/Arena_Fondo3"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 17 )
+centered = false
+
+[node name="Arena_Fondo2" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -50 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="ArenaFondo2Sprite" type="Sprite" parent="ParallaxBackground/Arena_Fondo2"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 15 )
+centered = false
+
+[node name="Arena_Fondo1" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -20 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="ArenaFondo1Sprite" type="Sprite" parent="ParallaxBackground/Arena_Fondo1"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Hierba_Fondo3" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -50 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="HierbaFondo3Sprite" type="Sprite" parent="ParallaxBackground/Hierba_Fondo3"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Hierba_Fondo2" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -50 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="HierbaFondo2Sprite" type="Sprite" parent="ParallaxBackground/Hierba_Fondo2"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Hierba_Fondo1" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+position = Vector2( 0, -20 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="HierbaFondo1Sprite" type="Sprite" parent="ParallaxBackground/Hierba_Fondo1"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+motion_scale = Vector2( 0.2, 1 )
+
+[node name="Jugador" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 504, 505.363 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 21 )
+hframes = 51
+frame = 6
+
+[node name="Arena" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Arena" type="Sprite" parent="ParallaxBackground/Arena"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 20 )
+centered = false
+
+[node name="Hierba" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Hierba" type="Sprite" parent="ParallaxBackground/Hierba"]
+modulate = Color( 1, 1, 1, 0 )
+light_mask = 1024
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Botones" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 1024
+motion_scale = Vector2( 0.2, 1 )
+script = ExtResource( 29 )
+
+[node name="Menu_Principal" type="MarginContainer" parent="ParallaxBackground/Botones"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = 313.0
+margin_right = 824.0
+margin_bottom = 513.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 20
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar" type="TextureButton" parent="ParallaxBackground/Botones/Menu_Principal"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 166.0
+margin_top = 20.0
+margin_right = 466.0
+margin_bottom = 93.0
+focus_neighbour_left = NodePath("../Opciones")
+focus_neighbour_right = NodePath("../Salir")
+focus_neighbour_bottom = NodePath("../Opciones")
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource( 22 )
+texture_hover = ExtResource( 23 )
+
+[node name="Opciones" type="TextureButton" parent="ParallaxBackground/Botones/Menu_Principal"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 107.0
+margin_right = 300.0
+margin_bottom = 180.0
+focus_neighbour_left = NodePath("../Salir")
+focus_neighbour_top = NodePath("../Jugar")
+focus_neighbour_right = NodePath("../Salir")
+focus_neighbour_bottom = NodePath("../Jugar")
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource( 26 )
+texture_hover = ExtResource( 25 )
+
+[node name="Salir" type="TextureButton" parent="ParallaxBackground/Botones/Menu_Principal"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 332.0
+margin_top = 107.0
+margin_right = 632.0
+margin_bottom = 180.0
+focus_neighbour_left = NodePath("../Opciones")
+focus_neighbour_top = NodePath("../Jugar")
+focus_neighbour_right = NodePath("../Opciones")
+focus_neighbour_bottom = NodePath("../Jugar")
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 24 )
+texture_hover = ExtResource( 27 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Naranja" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Azul" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sombras" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sol" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Piramide" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Columna_Derecha" type="Sprite" parent="."]
+position = Vector2( 0, -900 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Columna_Izquierda" type="Sprite" parent="."]
+position = Vector2( 0, -900 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Sombra_Texto" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="THE" type="Sprite" parent="."]
+position = Vector2( 0, -900 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="GREEK" type="Sprite" parent="."]
+position = Vector2( 0, -900 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="PYRAMID" type="Sprite" parent="."]
+position = Vector2( 0, -900 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Animacion_Jugador" type="AnimationPlayer" parent="."]
+anims/Jugador_Correr = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Sonido"
+
+[node name="SonidoEncima" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+bus = "Sonido"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 304, 200 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite"]
+margin_left = -50.6667
+margin_top = -33.3333
+margin_right = 119.333
+margin_bottom = -0.333328
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center] Created Using 
+Godot"
+text = " Created Using 
+Godot"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 2.9, 3 )
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 600
+[connection signal="focus_entered" from="ParallaxBackground/Botones/Menu_Principal/Jugar" to="." method="_on_Jugar_focus_entered"]
+[connection signal="mouse_entered" from="ParallaxBackground/Botones/Menu_Principal/Jugar" to="." method="_on_Jugar_mouse_entered"]
+[connection signal="pressed" from="ParallaxBackground/Botones/Menu_Principal/Jugar" to="ParallaxBackground/Botones" method="_on_Jugar_pressed"]
+[connection signal="focus_entered" from="ParallaxBackground/Botones/Menu_Principal/Opciones" to="." method="_on_Opciones_focus_entered"]
+[connection signal="mouse_entered" from="ParallaxBackground/Botones/Menu_Principal/Opciones" to="." method="_on_Opciones_mouse_entered"]
+[connection signal="pressed" from="ParallaxBackground/Botones/Menu_Principal/Opciones" to="ParallaxBackground/Botones" method="_on_Opciones_pressed"]
+[connection signal="pressed" from="ParallaxBackground/Botones/Menu_Principal/Opciones" to="." method="_on_Opciones_pressed"]
+[connection signal="focus_entered" from="ParallaxBackground/Botones/Menu_Principal/Salir" to="." method="_on_Salir_focus_entered"]
+[connection signal="mouse_entered" from="ParallaxBackground/Botones/Menu_Principal/Salir" to="." method="_on_Salir_mouse_entered"]
+[connection signal="pressed" from="ParallaxBackground/Botones/Menu_Principal/Salir" to="ParallaxBackground/Botones" method="_on_Salir_pressed"]

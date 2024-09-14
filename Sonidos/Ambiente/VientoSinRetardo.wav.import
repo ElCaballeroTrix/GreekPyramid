@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VientoSinRetardo.wav-268e8419f206e163bca34021e06a6dec.sample"
+
+[deps]
+
+source_file="res://Sonidos/Ambiente/VientoSinRetardo.wav"
+dest_files=[ "res://.import/VientoSinRetardo.wav-268e8419f206e163bca34021e06a6dec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

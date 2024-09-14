@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Desierto.wav-469baa0172232682d9403b4e4d545c8d.sample"
+
+[deps]
+
+source_file="res://Sonidos/Musica/Desierto.wav"
+dest_files=[ "res://.import/Desierto.wav-469baa0172232682d9403b4e4d545c8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

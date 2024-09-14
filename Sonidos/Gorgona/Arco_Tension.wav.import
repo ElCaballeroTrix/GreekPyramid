@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Arco_Tension.wav-e42861ede939d2066042f5c7f8a4d842.sample"
+
+[deps]
+
+source_file="res://Sonidos/Gorgona/Arco_Tension.wav"
+dest_files=[ "res://.import/Arco_Tension.wav-e42861ede939d2066042f5c7f8a4d842.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

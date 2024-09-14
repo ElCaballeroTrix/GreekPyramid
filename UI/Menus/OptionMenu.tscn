@@ -1,0 +1,238 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://UI/Menus/Marco_menu.png" type="Texture" id=1]
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Menus/OptionMenu.gd" type="Script" id=3]
+[ext_resource path="res://UI/Menus/Boton.png" type="Texture" id=4]
+[ext_resource path="res://UI/Menus/Exit.png" type="Texture" id=5]
+[ext_resource path="res://UI/Menus/Exit_lighting.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menus/Boton_Verde.png" type="Texture" id=7]
+[ext_resource path="res://UI/Menus/Tema_Interfaz.tres" type="Theme" id=8]
+[ext_resource path="res://Sonidos/Menu/Elegir_Menu.wav" type="AudioStream" id=9]
+[ext_resource path="res://UI/Controls_Lighting.png" type="Texture" id=10]
+[ext_resource path="res://UI/Controls.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="OptionMenu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.94902, 0.937255, 0.862745, 0.403922 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( 512, 312 )
+scale = Vector2( 0.473, 0.518 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 0.695
+margin_left = 192.0
+margin_top = 152.0
+margin_right = 905.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 713.0
+margin_bottom = 320.0
+
+[node name="Columna1" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_top = 60.0
+margin_right = 134.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Columna1"]
+margin_right = 134.0
+margin_bottom = 200.0
+size_flags_vertical = 0
+
+[node name="Sonido" type="Label" parent="MarginContainer/HBoxContainer/Columna1/VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sound"
+align = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/HBoxContainer/Columna1/VBoxContainer"]
+margin_top = 55.0
+margin_right = 134.0
+margin_bottom = 71.0
+focus_neighbour_top = NodePath("../../../Columna2/OptionButton")
+focus_neighbour_bottom = NodePath("../HSlider2")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 8 )
+min_value = -30.0
+max_value = 0.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Columna1/VBoxContainer"]
+margin_top = 75.0
+margin_right = 134.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Musica" type="Label" parent="MarginContainer/HBoxContainer/Columna1/VBoxContainer"]
+margin_top = 129.0
+margin_right = 134.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Music"
+align = 1
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/HBoxContainer/Columna1/VBoxContainer"]
+margin_top = 184.0
+margin_right = 134.0
+margin_bottom = 200.0
+focus_neighbour_top = NodePath("../HSlider")
+focus_neighbour_right = NodePath("../../../Columna2/Controlls")
+focus_neighbour_bottom = NodePath("../../../Columna2/OptionButton")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 8 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 138.0
+margin_right = 163.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 25, 200 )
+
+[node name="Columna2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 167.0
+margin_right = 438.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_right = 271.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Resolution"
+align = 1
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_top = 55.0
+margin_right = 271.0
+margin_bottom = 84.0
+focus_neighbour_top = NodePath("../Controlls")
+focus_neighbour_bottom = NodePath("../Label2/Boton_Pantalla")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 8 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.745098, 0.929412, 0.0823529, 1 )
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_top = 88.0
+margin_right = 271.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_top = 142.0
+margin_right = 271.0
+margin_bottom = 173.0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FullScreen"
+align = 1
+
+[node name="Boton_Pantalla" type="TextureButton" parent="MarginContainer/HBoxContainer/Columna2/Label2"]
+margin_left = 210.0
+margin_top = -0.137
+margin_right = 242.0
+margin_bottom = 31.863
+focus_neighbour_top = NodePath("../../OptionButton")
+focus_neighbour_right = NodePath("../../../Columna3/Exit")
+focus_neighbour_bottom = NodePath("../../Controlls")
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_top = 177.0
+margin_right = 271.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Controlls" type="TextureButton" parent="MarginContainer/HBoxContainer/Columna2"]
+margin_top = 211.0
+margin_right = 271.0
+margin_bottom = 291.0
+focus_neighbour_left = NodePath("../../Columna1/VBoxContainer/HSlider2")
+focus_neighbour_top = NodePath("../Label2/Boton_Pantalla")
+focus_neighbour_right = NodePath("../../Columna3/Exit")
+focus_neighbour_bottom = NodePath("../OptionButton")
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 10 )
+
+[node name="Columna3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 442.0
+margin_top = 120.0
+margin_right = 713.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Exit" type="TextureButton" parent="MarginContainer/HBoxContainer/Columna3"]
+margin_right = 271.0
+margin_bottom = 80.0
+focus_neighbour_left = NodePath("../../Columna2/Label2/Boton_Pantalla")
+focus_neighbour_top = NodePath("../../Columna2/OptionButton")
+focus_neighbour_right = NodePath("../../Columna1/VBoxContainer/HSlider")
+focus_neighbour_bottom = NodePath("../../Columna2/Controlls")
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Sonido"
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/Columna1/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/Columna1/VBoxContainer/HSlider2" to="." method="_on_HSlider2_value_changed"]
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/Columna2/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/Columna2/Label2/Boton_Pantalla" to="." method="_on_Boton_Pantalla_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/Columna2/Label2/Boton_Pantalla" to="." method="_on_Boton_Pantalla_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Columna2/Label2/Boton_Pantalla" to="." method="_on_TextureButton_pressed"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/Columna2/Controlls" to="." method="_on_Controlls_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/Columna2/Controlls" to="." method="_on_Controlls_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Columna2/Controlls" to="." method="_on_Controlls_pressed"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/Columna3/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/Columna3/Exit" to="." method="_on_Exit_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Columna3/Exit" to="." method="_on_Exit_pressed"]

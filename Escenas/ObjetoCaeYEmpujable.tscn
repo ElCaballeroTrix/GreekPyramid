@@ -1,0 +1,134 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Escenas/ObjetoCaeYEmpujable.gd" type="Script" id=3]
+[ext_resource path="res://Jefes/Serpopardo/Boulder.png" type="Texture" id=4]
+[ext_resource path="res://Sonidos/Jefes/SerpoPardo/RocasCaidas.wav" type="AudioStream" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Desaparece",
+"speed": 15.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 26.0
+
+[sub_resource type="Gradient" id=11]
+colors = PoolColorArray( 0.776471, 0.541176, 0.443137, 1, 1, 1, 1, 0.12549 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.987755, 0.487213 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 5, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, -98, 0 )
+initial_velocity = 30.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 12 )
+
+[node name="ObjetoCaeEmpujable" type="RigidBody2D"]
+collision_layer = 8
+mode = 2
+mass = 0.204082
+physics_material_override = SubResource( 1 )
+contacts_reported = 2
+contact_monitor = true
+can_sleep = false
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 7 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 1 )
+shape = SubResource( 8 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HitboxBoulder" parent="." instance=ExtResource( 1 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HitboxBoulder" index="0"]
+position = Vector2( -1.5, 2.8 )
+shape = SubResource( 9 )
+
+[node name="Objeto_Rompible" parent="." instance=ExtResource( 2 )]
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Objeto_Rompible" index="0"]
+position = Vector2( -1, 1 )
+shape = SubResource( 10 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0, -7.793 )
+amount = 50
+lifetime = 0.7
+process_material = SubResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = 2.0
+max_distance = 300.0
+bus = "Sonido"
+[connection signal="body_entered" from="." to="." method="_on_ObjetoCaeEmpujable_body_entered"]
+[connection signal="area_entered" from="Objeto_Rompible" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="HitboxBoulder"]
+
+[editable path="Objeto_Rompible"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Arena3.wav-003495cdb3287117836f428c5a285f8f.sample"
+
+[deps]
+
+source_file="res://Sonidos/Arena/Arena3.wav"
+dest_files=[ "res://.import/Arena3.wav-003495cdb3287117836f428c5a285f8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

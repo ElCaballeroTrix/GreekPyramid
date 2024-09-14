@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Madera5.wav-ef79bf86cad8a47a2fcfaca1cb752ffd.sample"
+
+[deps]
+
+source_file="res://Sonidos/Madera/Madera5.wav"
+dest_files=[ "res://.import/Madera5.wav-ef79bf86cad8a47a2fcfaca1cb752ffd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

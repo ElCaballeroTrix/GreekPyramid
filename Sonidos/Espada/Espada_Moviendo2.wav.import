@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Espada_Moviendo2.wav-b70d0ff15751056c17565d41a0df8a29.sample"
+
+[deps]
+
+source_file="res://Sonidos/Espada/Espada_Moviendo2.wav"
+dest_files=[ "res://.import/Espada_Moviendo2.wav-b70d0ff15751056c17565d41a0df8a29.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

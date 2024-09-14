@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CorrerSerpopardo1.wav-b1ed6d56cad04dc08bb8a8bef1b1ad36.sample"
+
+[deps]
+
+source_file="res://Sonidos/Jefes/SerpoPardo/Correr/CorrerSerpopardo1.wav"
+dest_files=[ "res://.import/CorrerSerpopardo1.wav-b1ed6d56cad04dc08bb8a8bef1b1ad36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

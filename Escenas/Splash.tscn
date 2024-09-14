@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="Curve" id=42]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, -252.818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=43]
+curve = SubResource( 42 )
+
+[sub_resource type="Gradient" id=40]
+offsets = PoolRealArray( 0, 0.451477, 0.683544, 1 )
+colors = PoolColorArray( 0.227451, 0.403922, 0.592157, 1, 0.333333, 0.596078, 0.870588, 1, 0.333333, 0.596078, 0.870588, 0.882353, 0.333333, 0.596078, 0.870588, 0.498039 )
+
+[sub_resource type="GradientTexture" id=41]
+gradient = SubResource( 40 )
+
+[sub_resource type="Curve" id=44]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.665385, 0.698864 ), 0.0, 0.0, 0, 0, Vector2( 0.992308, 0.2625 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=45]
+curve = SubResource( 44 )
+
+[sub_resource type="ParticlesMaterial" id=46]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 2, 200, 0 )
+initial_velocity = 90.0
+angular_velocity = 156.52
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 43 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -10.0
+scale = 6.03
+scale_curve = SubResource( 45 )
+color_ramp = SubResource( 41 )
+
+[node name="Splash_Derecha" type="Particles2D"]
+position = Vector2( 664.007, 597.29 )
+rotation = -0.665277
+scale = Vector2( 0.436885, 0.438128 )
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.8
+process_material = SubResource( 46 )

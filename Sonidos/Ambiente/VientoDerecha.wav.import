@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VientoDerecha.wav-96256e6afd51c737f299b1e52137eff8.sample"
+
+[deps]
+
+source_file="res://Sonidos/Ambiente/VientoDerecha.wav"
+dest_files=[ "res://.import/VientoDerecha.wav-96256e6afd51c737f299b1e52137eff8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

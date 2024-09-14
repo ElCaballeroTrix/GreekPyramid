@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 250, 1 )
+flag_disable_z = true
+spread = 2.0
+gravity = Vector3( 30, 0, 0 )
+initial_velocity = 600.0
+initial_velocity_random = 0.5
+angular_velocity = -15.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 2.0
+tangential_accel_random = 0.5
+angle = 54.0
+scale_random = 1.0
+color = Color( 0.92549, 0.886275, 0.776471, 1 )
+
+[node name="Sand" type="Node2D"]
+position = Vector2( 344, 0 )
+rotation = 2.26893
+
+[node name="Particles2D" type="Particles2D" parent="."]
+rotation = 0.872665
+amount = 2000
+visibility_rect = Rect2( -1, -600, 1000, 1000 )
+process_material = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}

@@ -1,0 +1,508 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://UI/Menus/Marco_menu.png" type="Texture" id=1]
+[ext_resource path="res://UI/Menus/Tema_Interfaz.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Menus/Guardados.gd" type="Script" id=3]
+[ext_resource path="res://UI/Menus/Trueno.png" type="Texture" id=4]
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sonidos/Menu/Elegir_Menu.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sonidos/Menu/Abrir_Menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://UI/Menus/No.png" type="Texture" id=8]
+[ext_resource path="res://UI/Menus/NoHovered.png" type="Texture" id=9]
+[ext_resource path="res://UI/Menus/LineaDivisora.png" type="Texture" id=10]
+[ext_resource path="res://Sonidos/Dialogo/blip.wav" type="AudioStream" id=11]
+[ext_resource path="res://UI/MobileControls/StartGameMobile.png" type="Texture" id=12]
+[ext_resource path="res://UI/MobileControls/StartGameMobileHovered.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "EntrarAJuego"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Guardados" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.94902, 0.937255, 0.862745, 0.403922 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( 512, 312 )
+scale = Vector2( 0.473, 0.518 )
+texture = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 198.0
+margin_top = 149.0
+margin_right = 824.0
+margin_bottom = 474.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 626.0
+margin_bottom = 325.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 626.0
+margin_bottom = 18.319
+rect_min_size = Vector2( 0, 18.319 )
+
+[node name="Partida1" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 626.0
+margin_bottom = 100.0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Partida1"]
+margin_right = 48.0
+margin_bottom = 78.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida1"]
+margin_left = 52.0
+margin_right = 57.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 5, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Partida1"]
+margin_left = 61.0
+margin_right = 626.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+
+[node name="Nombrepartida1" type="LineEdit" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 29.0
+focus_neighbour_top = NodePath("../../../../../Button2")
+focus_neighbour_bottom = NodePath("../../../../../Button1")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer"]
+margin_top = 33.0
+margin_right = 565.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer"]
+margin_top = 42.0
+margin_right = 565.0
+margin_bottom = 68.0
+
+[node name="Date" type="Label" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer/HBoxContainer"]
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 104.0
+margin_bottom = 26.0
+custom_constants/margin_right = 100
+
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer/Partida1/VBoxContainer/HBoxContainer"]
+margin_left = 108.0
+margin_right = 108.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 626.0
+margin_bottom = 122.319
+rect_min_size = Vector2( 0, 18.319 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Partida2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 126.0
+margin_right = 626.0
+margin_bottom = 204.0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Partida2"]
+margin_right = 48.0
+margin_bottom = 78.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida2"]
+margin_left = 52.0
+margin_right = 57.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 5, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Partida2"]
+margin_left = 61.0
+margin_right = 626.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+
+[node name="Nombrepartida2" type="LineEdit" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 29.0
+focus_neighbour_top = NodePath("../../../../../Button0")
+focus_neighbour_bottom = NodePath("../../../../../Button2")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer"]
+margin_top = 33.0
+margin_right = 565.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer"]
+margin_top = 42.0
+margin_right = 565.0
+margin_bottom = 68.0
+
+[node name="Date" type="Label" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer/HBoxContainer"]
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 104.0
+margin_bottom = 26.0
+custom_constants/margin_right = 100
+
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer/Partida2/VBoxContainer/HBoxContainer"]
+margin_left = 108.0
+margin_right = 108.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 208.0
+margin_right = 626.0
+margin_bottom = 226.319
+rect_min_size = Vector2( 0, 18.319 )
+
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Partida3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 230.0
+margin_right = 626.0
+margin_bottom = 308.0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Partida3"]
+margin_right = 48.0
+margin_bottom = 78.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida3"]
+margin_left = 52.0
+margin_right = 57.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 5, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Partida3"]
+margin_left = 61.0
+margin_right = 626.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+
+[node name="Nombrepartida3" type="LineEdit" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer"]
+margin_right = 565.0
+margin_bottom = 29.0
+focus_neighbour_top = NodePath("../../../../../Button1")
+focus_neighbour_bottom = NodePath("../../../../../Button0")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer"]
+margin_top = 33.0
+margin_right = 565.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer"]
+margin_top = 42.0
+margin_right = 565.0
+margin_bottom = 68.0
+
+[node name="Date" type="Label" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer/HBoxContainer"]
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 104.0
+margin_bottom = 26.0
+custom_constants/margin_right = 100
+
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer/Partida3/VBoxContainer/HBoxContainer"]
+margin_left = 108.0
+margin_right = 108.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.647059, 0.235294, 0.207843, 0.929412 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+bus = "Sonido"
+
+[node name="Button0" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.564706 )
+margin_left = 188.0
+margin_top = 148.0
+margin_right = 837.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 0, 105 )
+focus_neighbour_top = NodePath("../MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3")
+focus_neighbour_right = NodePath("../Borrado0")
+focus_neighbour_bottom = NodePath("../MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2")
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.447059 )
+margin_left = 188.0
+margin_top = 258.0
+margin_right = 837.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 0, 110 )
+focus_neighbour_top = NodePath("../MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1")
+focus_neighbour_right = NodePath("../Borrado1")
+focus_neighbour_bottom = NodePath("../MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3")
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.447059 )
+margin_left = 188.0
+margin_top = 368.0
+margin_right = 837.0
+margin_bottom = 473.0
+rect_min_size = Vector2( 0, 105 )
+focus_neighbour_top = NodePath("../MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2")
+focus_neighbour_right = NodePath("../Borrado2")
+focus_neighbour_bottom = NodePath("../MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1")
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borrado0" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 220.0
+margin_right = 822.0
+margin_bottom = 252.0
+focus_neighbour_left = NodePath("../Button0")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borrado1" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 324.0
+margin_right = 822.0
+margin_bottom = 356.0
+focus_neighbour_left = NodePath("../Button1")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borrado2" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 435.0
+margin_right = 822.0
+margin_bottom = 467.0
+focus_neighbour_left = NodePath("../Button2")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbrirMenuDelete" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+bus = "Sonido"
+
+[node name="Letras" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+bus = "Sonido"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EntrarAJuego = SubResource( 4 )
+
+[node name="MovilEmpezar0" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 220.0
+margin_right = 822.0
+margin_bottom = 252.0
+focus_neighbour_left = NodePath("../Button0")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MovilEmpezar1" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 324.0
+margin_right = 822.0
+margin_bottom = 356.0
+focus_neighbour_left = NodePath("../Button0")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MovilEmpezar2" type="TextureButton" parent="."]
+visible = false
+margin_left = 790.0
+margin_top = 435.0
+margin_right = 822.0
+margin_bottom = 467.0
+focus_neighbour_left = NodePath("../Button0")
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_right = 1029.0
+margin_bottom = 601.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1" to="." method="_on_Nombrepartida1_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1" to="." method="_on_Nombrepartida1_mouse_entered"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1" to="." method="_on_Nombrepartida1_text_changed"]
+[connection signal="text_entered" from="MarginContainer/VBoxContainer/Partida1/VBoxContainer/Nombrepartida1" to="." method="_on_Nombrepartida1_text_entered"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2" to="." method="_on_Nombrepartida2_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2" to="." method="_on_Nombrepartida2_mouse_entered"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2" to="." method="_on_Nombrepartida2_text_changed"]
+[connection signal="text_entered" from="MarginContainer/VBoxContainer/Partida2/VBoxContainer/Nombrepartida2" to="." method="_on_Nombrepartida2_text_entered"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3" to="." method="_on_Nombrepartida3_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3" to="." method="_on_Nombrepartida3_mouse_entered"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3" to="." method="_on_Nombrepartida3_text_changed"]
+[connection signal="text_entered" from="MarginContainer/VBoxContainer/Partida3/VBoxContainer/Nombrepartida3" to="." method="_on_Nombrepartida3_text_entered"]
+[connection signal="focus_entered" from="Button0" to="." method="_on_Button0_focus_entered"]
+[connection signal="mouse_entered" from="Button0" to="." method="_on_Button0_mouse_entered"]
+[connection signal="pressed" from="Button0" to="." method="_on_Button0_pressed"]
+[connection signal="focus_entered" from="Button1" to="." method="_on_Button1_focus_entered"]
+[connection signal="mouse_entered" from="Button1" to="." method="_on_Button1_mouse_entered"]
+[connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
+[connection signal="focus_entered" from="Button2" to="." method="_on_Button2_focus_entered"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_Button2_mouse_entered"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="Borrado0" to="." method="_on_Borrado0_focus_entered"]
+[connection signal="mouse_entered" from="Borrado0" to="." method="_on_Borrado0_mouse_entered"]
+[connection signal="pressed" from="Borrado0" to="." method="_on_Borrado0_pressed"]
+[connection signal="focus_entered" from="Borrado1" to="." method="_on_Borrado1_focus_entered"]
+[connection signal="mouse_entered" from="Borrado1" to="." method="_on_Borrado1_mouse_entered"]
+[connection signal="pressed" from="Borrado1" to="." method="_on_Borrado1_pressed"]
+[connection signal="focus_entered" from="Borrado2" to="." method="_on_Borrado2_focus_entered"]
+[connection signal="mouse_entered" from="Borrado2" to="." method="_on_Borrado2_mouse_entered"]
+[connection signal="pressed" from="Borrado2" to="." method="_on_Borrado2_pressed"]
+[connection signal="focus_entered" from="MovilEmpezar0" to="." method="_on_MovilEmpezar0_focus_entered"]
+[connection signal="mouse_entered" from="MovilEmpezar0" to="." method="_on_MovilEmpezar0_mouse_entered"]
+[connection signal="pressed" from="MovilEmpezar0" to="." method="_on_MovilEmpezar0_pressed"]
+[connection signal="focus_entered" from="MovilEmpezar1" to="." method="_on_MovilEmpezar1_focus_entered"]
+[connection signal="mouse_entered" from="MovilEmpezar1" to="." method="_on_MovilEmpezar1_mouse_entered"]
+[connection signal="pressed" from="MovilEmpezar1" to="." method="_on_MovilEmpezar1_pressed"]
+[connection signal="focus_entered" from="MovilEmpezar2" to="." method="_on_MovilEmpezar2_focus_entered"]
+[connection signal="mouse_entered" from="MovilEmpezar2" to="." method="_on_MovilEmpezar2_mouse_entered"]
+[connection signal="pressed" from="MovilEmpezar2" to="." method="_on_MovilEmpezar2_pressed"]

@@ -1,0 +1,303 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://UI/HealthUI.gd" type="Script" id=1]
+[ext_resource path="res://UI/Corazones_nofull.png.png" type="Texture" id=2]
+[ext_resource path="res://UI/Power-Ups/CorazonBrillante.tres" type="Texture" id=3]
+[ext_resource path="res://UI/LeftLineEnd.png" type="Texture" id=4]
+[ext_resource path="res://UI/RightLineEnd.png" type="Texture" id=5]
+[ext_resource path="res://UI/MiddleLine.png" type="Texture" id=6]
+[ext_resource path="res://TrixKnight/KnightHelmet.png" type="Texture" id=7]
+[ext_resource path="res://Jefes/Gorgona/GorgonaHabilidad.png" type="Texture" id=8]
+[ext_resource path="res://UI/HabilidadGorgonaGor.gd" type="Script" id=9]
+[ext_resource path="res://UI/Courneuf-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Jefes/Serpopardo/SerpopardoHabilidad.png" type="Texture" id=11]
+[ext_resource path="res://Shaders/ObjectFloating.shader" type="Shader" id=12]
+[ext_resource path="res://Jefes/Caribdis/CaribdisHabilidad.png" type="Texture" id=13]
+[ext_resource path="res://UI/HabilidadesConCargas.gd" type="Script" id=14]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 12 )
+shader_param/onoff = 1.0
+shader_param/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 12 )
+shader_param/onoff = 1.0
+shader_param/intensity = 1.0
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HeartUIFull:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 17, 5 ), Vector2( 18, 6 ), Vector2( 17, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HeartUIEmpty:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 17, 5 ), Vector2( 18, 6 ), Vector2( 17, 5 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 10 )
+
+[node name="HealthUI" type="Control"]
+margin_right = 60.0
+margin_bottom = 15.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUIEmpty" type="TextureRect" parent="."]
+material = SubResource( 1 )
+anchor_left = 0.2
+anchor_right = 0.2
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 85.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.965, 0.965 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUIFull" type="TextureRect" parent="."]
+material = SubResource( 2 )
+anchor_left = 0.2
+anchor_right = 0.2
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 85.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.965, 0.965 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Vibracion_Corazones = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Knight" type="Sprite" parent="."]
+position = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="MiddleLine" type="TextureRect" parent="."]
+anchor_left = 0.2
+anchor_right = 0.2
+margin_left = 13.0
+margin_top = 14.0
+margin_right = 76.0
+margin_bottom = 19.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="LineLeftEnd" type="Sprite" parent="."]
+position = Vector2( 16, 14 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="LineRightEnd" type="Sprite" parent="."]
+position = Vector2( 53, 14 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Habilidades" type="YSort" parent="."]
+position = Vector2( 16, 20 )
+
+[node name="HabilidadGorgona" type="TextureRect" parent="Habilidades"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+textura = "res://Jefes/Gorgona/GorgonaHabilidad.png"
+
+[node name="TextureProgress" type="TextureProgress" parent="Habilidades/HabilidadGorgona"]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+margin_right = 64.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fill_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Habilidades/HabilidadGorgona"]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Habilidades/HabilidadGorgona"]
+margin_left = 25.0
+margin_right = 25.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Habilidades/HabilidadGorgona"]
+anchor_top = 0.777
+anchor_right = 0.406
+anchor_bottom = 0.777
+margin_right = 40.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.937255, 0.721569, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0.0"
+align = 2
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HabilidadCaribdis" type="TextureRect" parent="Habilidades"]
+visible = false
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 13 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+textura = "res://Jefes/Caribdis/CaribdisHabilidad.png"
+
+[node name="TextureProgress" type="TextureProgress" parent="Habilidades/HabilidadCaribdis"]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fill_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="Habilidades/HabilidadCaribdis"]
+wait_time = 30.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Habilidades/HabilidadCaribdis"]
+margin_left = 25.0
+margin_right = 25.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="Habilidades/HabilidadCaribdis"]
+anchor_top = 0.777
+anchor_right = 0.406
+anchor_bottom = 0.777
+margin_right = 40.0002
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.937255, 0.721569, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0.0"
+align = 2
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HabilidadSerpopardo" type="TextureRect" parent="Habilidades"]
+visible = false
+margin_left = 40.0
+margin_right = 104.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 11 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+textura = "res://Jefes/Serpopardo/SerpopardoHabilidad.png"
+
+[node name="TextureProgress" type="TextureProgress" parent="Habilidades/HabilidadSerpopardo"]
+modulate = Color( 0.145098, 0.145098, 0.145098, 0.87451 )
+anchor_right = 0.366
+anchor_bottom = 0.336
+margin_right = 40.576
+margin_bottom = 42.496
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fill_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TimerOfCharges" type="Timer" parent="Habilidades/HabilidadSerpopardo"]
+wait_time = 30.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Habilidades/HabilidadSerpopardo"]
+margin_left = 25.0
+margin_right = 25.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CargasGancho" type="Label" parent="Habilidades/HabilidadSerpopardo"]
+anchor_top = 0.777
+anchor_right = 0.406
+anchor_bottom = 0.777
+margin_right = 40.0002
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.937255, 0.721569, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 2
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Habilidades/HabilidadGorgona/Timer" to="Habilidades/HabilidadGorgona" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Habilidades/HabilidadCaribdis/Timer" to="Habilidades/HabilidadCaribdis" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Habilidades/HabilidadSerpopardo/TimerOfCharges" to="Habilidades/HabilidadSerpopardo" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Habilidades/HabilidadSerpopardo/TimerOfCharges" to="Habilidades/HabilidadSerpopardo" method="_on_TimerOfCharges_timeout"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Columpio.gd" type="Script" id=1]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tileset/Decoraciones/Trampas/Traps.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Columpio"
+length = 9.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.5, 4.5, 6.5, 7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 50.0, 0.0, -45.0, -50.0, 0.0 ]
+}
+
+[node name="Columpio" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Chain" type="Sprite" parent="."]
+position = Vector2( 0, 16 )
+texture = ExtResource( 3 )
+hframes = 40
+frame = 8
+
+[node name="ChainChild2" type="Sprite" parent="Chain"]
+position = Vector2( 0, 27 )
+texture = ExtResource( 3 )
+hframes = 40
+frame = 8
+
+[node name="ChainChild" type="Sprite" parent="Chain"]
+position = Vector2( 0, 59 )
+texture = ExtResource( 3 )
+hframes = 40
+frame = 11
+
+[node name="ChainChildLeft" type="Sprite" parent="Chain"]
+position = Vector2( -32, 59 )
+texture = ExtResource( 3 )
+hframes = 40
+frame = 13
+
+[node name="Hitbox" parent="Chain/ChainChildLeft" instance=ExtResource( 2 )]
+position = Vector2( 12, 10 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Chain/ChainChildLeft/Hitbox" index="0"]
+shape = SubResource( 1 )
+
+[node name="ChainChildRight" type="Sprite" parent="Chain"]
+position = Vector2( 32, 59 )
+texture = ExtResource( 3 )
+hframes = 40
+frame = 12
+
+[node name="Hitbox" parent="Chain/ChainChildRight" instance=ExtResource( 2 )]
+position = Vector2( -12, 10 )
+collision_layer = 128
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Chain/ChainChildRight/Hitbox" index="0"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/Columpio = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Chain/ChainChildLeft/Hitbox"]
+
+[editable path="Chain/ChainChildRight/Hitbox"]

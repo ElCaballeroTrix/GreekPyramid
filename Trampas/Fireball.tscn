@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Tileset/Luz_Esfera.png" type="Texture" id=1]
+[ext_resource path="res://Trampas/Fireball.gd" type="Script" id=2]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 2.0
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.446154, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.867188, 0.592381, 0.067749, 0.7673, 0.960784, 0.0470588, 0.0470588, 0.478431 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.835227 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.417045 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+angular_velocity = 350.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.0
+angle = 45.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 1.0
+
+[node name="Fireball" type="Area2D"]
+collision_layer = 2147484160
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 6 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+rotation = -1.5708
+amount = 100
+lifetime = 0.8
+speed_scale = 2.0
+explosiveness = 0.2
+process_material = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="Particles2D"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+color = Color( 0.921569, 0.439216, 0.0117647, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 300.0
+bus = "Sonido"
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+visible = false
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 7 )
+[connection signal="area_entered" from="." to="." method="_on_Fireball_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]
+
+[editable path="Hitbox"]

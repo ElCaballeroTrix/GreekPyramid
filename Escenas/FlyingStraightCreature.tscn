@@ -1,0 +1,61 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FlyingStraightCreature.gd" type="Script" id=2]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlanco1.png" type="Texture" id=3]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlanco0.png" type="Texture" id=4]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlanco2.png" type="Texture" id=5]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlancoArriba0.png" type="Texture" id=6]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlancoArriba2.png" type="Texture" id=7]
+[ext_resource path="res://Enemigos/Pajaros/PajaroBlanco/PajaroBlancoArriba1.png" type="Texture" id=8]
+[ext_resource path="res://Enemigos/Pajaros/PajaroNegro/PajaroNegroLado2.png" type="Texture" id=9]
+[ext_resource path="res://Enemigos/Pajaros/PajaroNegro/PajaroNegroLado0.png" type="Texture" id=10]
+[ext_resource path="res://Enemigos/Pajaros/PajaroNegro/PajaroNegroLado1.png" type="Texture" id=11]
+[ext_resource path="res://Sonidos/Enemigos/PalomaVolando.wav" type="AudioStream" id=12]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.0
+height = 11.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "PajaroBlancoArriba",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "PajaroNegroLado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "PajaroBlancoLado",
+"speed": 8.0
+} ]
+
+[node name="FlyingStraightCreature" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+collision_layer = 1
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "PajaroBlancoArriba"
+frame = 3
+playing = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+max_distance = 300.0
+bus = "Sonido"
+
+[editable path="Hitbox"]

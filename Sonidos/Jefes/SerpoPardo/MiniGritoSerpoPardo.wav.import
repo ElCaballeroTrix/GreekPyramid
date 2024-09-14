@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MiniGritoSerpoPardo.wav-c33f9007f762273e9632460e6c9e2586.sample"
+
+[deps]
+
+source_file="res://Sonidos/Jefes/SerpoPardo/MiniGritoSerpoPardo.wav"
+dest_files=[ "res://.import/MiniGritoSerpoPardo.wav-c33f9007f762273e9632460e6c9e2586.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ChorroInicio.wav-f16ad7aa55dfb73a63ea2a576b14292a.sample"
+
+[deps]
+
+source_file="res://Sonidos/Nivel2/ChorroInicio.wav"
+dest_files=[ "res://.import/ChorroInicio.wav-f16ad7aa55dfb73a63ea2a576b14292a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

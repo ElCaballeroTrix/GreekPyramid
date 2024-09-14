@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Aleteo.wav-9e15874adc117ff2e3b817d287d33687.sample"
+
+[deps]
+
+source_file="res://Sonidos/Nivel3/Aleteo.wav"
+dest_files=[ "res://.import/Aleteo.wav-9e15874adc117ff2e3b817d287d33687.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

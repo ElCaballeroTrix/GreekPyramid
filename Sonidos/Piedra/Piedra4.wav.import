@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Piedra4.wav-2ec998a7d53a72d22c33485bb445af7a.sample"
+
+[deps]
+
+source_file="res://Sonidos/Piedra/Piedra4.wav"
+dest_files=[ "res://.import/Piedra4.wav-2ec998a7d53a72d22c33485bb445af7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

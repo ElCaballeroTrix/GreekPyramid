@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EstiramientoCuello.wav-0a4e3653cf0577fb618a47ecc7789d60.sample"
+
+[deps]
+
+source_file="res://Sonidos/Jefes/SerpoPardo/EstiramientoCuello.wav"
+dest_files=[ "res://.import/EstiramientoCuello.wav-0a4e3653cf0577fb618a47ecc7789d60.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
